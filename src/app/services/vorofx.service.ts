@@ -6,13 +6,13 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AxinService {
+export class VorofxService {
 
-  private baseUrl = environment.url_api; 
+  private baseUrl = environment.url_api;
 
 
   constructor(private http: HttpClient, private headers: HeadersService) { }
- 
+
   signup(data: any) {
     return this.http.post(`${this.baseUrl}/register`, data, this.headers.getAuthHeaders());
   }
@@ -82,20 +82,20 @@ export class AxinService {
   resendCode(data: any){
     return this.http.post(`${this.baseUrl}/reenviar`, data, this.headers.getAuthHeaders());
   }
-  
+
   verifyEmailAndPassword(data: any){
     return this.http.post(`${this.baseUrl}/verifyEmail`, data, this.headers.getAuthHeaders());
   }
-  
+
   sendNumberRequest(data: any){
     return this.http.post(`${this.baseUrl}/sendSMSCode`, data, this.headers.getAuthHeaders());
   }
-  
+
   sendCodeVerify(data: any){
     return this.http.post(`${this.baseUrl}/codeVerify`, data, this.headers.getAuthHeaders());
   }
 
-  test(){ 
+  test(){
     return this.http.get(`${this.baseUrl}/categories/1`);
   }
 
