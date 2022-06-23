@@ -1,0 +1,73 @@
+
+  #variable1 {
+    background-image: url("../../../../assets/img/fondos/fondo3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #000000;
+    height: 100vh;
+    max-height: 100%;
+  }
+  
+
+  #variable1 .btn {
+    background-color: #ffffff !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 20px !important;
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    -ms-border-radius: 20px !important;
+    -o-border-radius: 20px !important;
+  }
+  
+  #variable1 .btn:hover {
+    transform: translate(0, -3px) !important;
+    -webkit-transform: translate(0, -3px) !important;
+    -o-transform: translate(0, -3px) !important;
+    -moz-transform: translate(0, -3px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  #variable1 .btn:focus {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  #variable1 input {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+  
+  @media (max-width: 768px) {
+  
+    #variable1 {
+      background-attachment: scroll !important;
+    }
+
+    #variable1 .btn {
+      background-color: #004fff !important;
+      border-width: 1px !important;
+      border-style: solid !important;
+      border-color: #004fff !important;
+      color: #ffffff !important;
+    }
+  
+    #variable1 .btn:focus {
+      background-color: #004fff !important;
+      color: #ffffff !important;
+    }
+  
+    #variable1 p, a {
+      font-size: 8px !important;
+    }
+  }
+  
+
+  

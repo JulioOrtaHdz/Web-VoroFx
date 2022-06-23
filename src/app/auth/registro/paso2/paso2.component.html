@@ -1,0 +1,134 @@
+<section id="login" class="py-5 px-3 p-md-5 d-flex justify-content-between flex-column">
+
+    <div class="container">
+  
+      <div class="lang_content" id="lang_contentMain">
+        <button class="lang_change" (click)="openLangMenu(menu_lang)" (clickOutside)="openLangMenu(menu_lang, true)"><span>{{this.lang}}</span><i
+            class="ml-1 fas fa-chevron-down"></i></button>
+        <div class="options_lang hidden" #menu_lang (resize)="openLangMenu(menu_lang, true)" >
+          <div class="option">
+            <input type="radio" name="lang" value="es" id="ES" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+            <label for="ES">
+              <img src="assets/img/ES.svg" alt="ES">
+                <div>ES</div>
+              </label>
+          </div>
+          <div class="option">
+            <input type="radio" name="lang" value="en" id="EN" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+            <label for="EN">
+              <img src="assets/img/ENG.svg" alt="ENG">
+                <div>EN</div>
+            </label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-12 mb-4">
+          <a [routerLink]="['/home']">
+            <img loading="lazy" id="logoLogin" src="assets/img/logo-black.png" alt="vorofx vorofx">
+          </a>
+        </div>
+        <div class="col-12" style="height: 58px;" id="space_void">
+        </div>
+  
+        <form [formGroup]="personalesForm" (submit)="onSubmit"
+          class="bg-white col-12 col-md-8 col-lg-6 col-xl-5 m-auto px-0 mx-0 rounded-circle">
+          <div class="col-md-12 col-lg-12 p-3 mx-0 headform">
+            <div class="h7 text-white text-center my-0" style="position: relative;">
+              <div style="position: absolute; cursor: pointer; width: 24px; height: 24px;" [routerLink]="['/registrarse/paso_1']"><i class="fas fa-angle-left"></i></div>
+              ¿Cómo te llamas?
+            </div>
+          </div>
+
+          
+          
+  
+          <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-1 p-md-4">
+
+            <div class="col-md-12 col-lg-12">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label><span>Nombre (s)</span>*</mat-label>
+                <input matInput formControlName="name">
+                <mat-error *ngIf="personalesForm.controls['name'].errors?.required && personalesForm.controls['name'].touched">
+                  Nombre requerido</mat-error>
+                <mat-error *ngIf="personalesForm.controls['name'].errors?.minlength && personalesForm.controls['name'].touched">
+                  Nombre debe ser mayor a 2 caracteres</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12 col-lg-12">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label><span>Primer apellido</span>*</mat-label>
+                <input matInput formControlName="first_last_name">
+                <mat-error *ngIf="personalesForm.controls['first_last_name'].errors?.required && personalesForm.controls['first_last_name'].touched">
+                  Primer apellido requerido</mat-error>
+                <mat-error *ngIf="personalesForm.controls['first_last_name'].errors?.minlength && personalesForm.controls['first_last_name'].touched">
+                  Primer apellido debe ser mayor a 2 caracteres</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12 col-lg-12">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label><span>Segundo apellido</span>*</mat-label>
+                <input matInput formControlName="second_last_name">
+                <mat-error *ngIf="personalesForm.controls['second_last_name'].errors?.minlength && personalesForm.controls['second_last_name'].touched">
+                    Segundo apellido debe ser mayor a 2 caracteres</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12 col-lg-12">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label><span>Fecha de nacimiento</span>*</mat-label>
+                <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="birth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="personalesForm.controls['birth'].errors?.required && personalesForm.controls['birth'].touched">
+                    Fecha de nacimiento requerido</mat-error>
+              </mat-form-field>
+            </div>
+
+            
+          <!-- <div class="col-md-12 col-lg-12 mt-3" style="height: 70px;" *ngIf="isPartner">
+            <div class="content_input_tel">
+              <input type="tel" ng2TelInput style="display: inline-block;" [ng2TelInputOptions]="initialInputTel"
+                (intlTelInputObject)="getElement($event)" (countryChange)="onCountryChange($event)" required
+                formControlName="numero">
+              <span class="bar_ground"></span>
+              <span class="bar"
+                [ngClass]="{'bad': personalesForm.controls['numero'].errors?.telefono && personalesForm.controls['numero'].touched }"></span>
+              <div class="content_errors">
+                <div class="error"
+                  [ngClass]="{'show' : (personalesForm.controls['numero'].errors?.telefono && personalesForm.controls['numero'].touched)}">
+                  {{ personalesForm.controls['numero'].getError("telefono")?.requiredPattern}}</div>
+              </div>
+            </div>
+          </div> -->
+  
+            <button class="btn btn-primary btn-block rounded-circle mb-3 mt-3" (click)="onSubmit()" [disabled]="!personalesForm.valid || load">
+                <span *ngIf="!load">Siguiente</span>
+              <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+              <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+              <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            </button>
+          </div>
+  
+        </form>
+  
+  
+      </div>
+  
+  
+    </div>
+  
+    <div class="contact_us">
+      <p class="text-center" style="color: #96a5c6 !important;">
+        <small>
+          Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+          Si tienes algún problema <br>
+        </small>
+      </p>
+    </div>
+  </section>
+  
+  <ng-container #modal ></ng-container>

@@ -1,0 +1,313 @@
+
+<section id="porque" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row mt-5">
+
+            <div class="col-12">
+                <h1 class="h3 text-md-center font-weight-bold">
+                    ¿Buscas otra opción de inversión?
+                </h1>
+                <br><br>
+                <h2 class="h4 text-md-center">
+                    Conoce todos nuestros beneficios y sabrás por que Axin es para ti.
+                </h2>
+                <br><br>
+            </div>
+            <div class="m-auto row col-12 col-md-8 col-lg-8">
+                <button  class="col-4 btn-default" [ngClass]="{active: ahorro === true}" (click)="onAhorro()">Renta fija</button>
+                <button  class="col-4 btn-default" [ngClass]="{active: inversion === true}" (click)="onInversion()">Renta variable</button>
+                <button  class="col-4 btn-default" [ngClass]="{active: decide === true}"  (click)="onDecide()">Compara y decide</button>
+            </div>
+            <div class="col-12"> 
+                <br><br>
+                <h2 *ngIf="ahorro" class="h4 text-md-center font-weight-bold">
+                   En este tipo de inversión, desde el principio sabrás cuánto vas a ganar.
+                </h2>
+                <h2 *ngIf="inversion" class="h4 text-md-center font-weight-bold">
+                    Supera tus metas financieras con nuestras estrategias. 
+                </h2>
+                <h2 *ngIf="decide" class="h4 text-md-center font-weight-bold">
+                    Compara las diferentes formas de invertir en Axin.
+                </h2>
+                <br><br>
+            </div>
+
+            <div *ngIf="ahorro" class="m-auto col-12 col-md-10 col-lg-7 backgroundAho">
+                <h3 class="h4 text-center col-12 text-white">Inversión - Renta Fija</h3><br>
+                <span class="float-left col-1">></span><p class="col-11">Es un producto de perfil conservador sin exposición al riesgo.</p>
+                <span class="float-left col-1">></span><p class="col-11">Recibe una tasa fija de hasta el 12% anual.</p>
+                <span class="float-left col-1">></span><p class="col-11">Monitorea todos los días la evolución de tu cuenta.</p>
+                <span class="float-left col-1">></span><p class="col-11">Podrás depositar en dólares y en bitcoin.</p>
+                <span class="float-left col-1">></span><p class="col-11">Invierte sin comisiones por apertura, administrativos o retiros.</p>
+                <span class="float-left col-1">></span><p class="col-11">Podrás retirar tus intereses de manera mensual.</p> 
+                <span class="float-left col-1">></span><p class="col-11">Contrarresta la inflación.</p> 
+                <span class="float-left col-1">></span><p class="col-11">Sin limite de inversión.</p> 
+                <span class="float-left col-1">></span><p class="col-11">Abre tu cuenta desde $500 dólares.</p> <br>
+                <button class="m-auto btn btn-primary d-flex" style="color: #004fff!important;" [routerLink]="['/registrarse']">Quiero empezar</button><br>
+            </div>
+
+            <div *ngIf="inversion" class="m-auto col-12 col-md-10 col-lg-7 backgroundInv">
+                <h3 class="h4 text-center col-12 text-white">Inversión - Renta Variable</h3><br>
+                <span class="float-left col-1">></span><p class="col-11">Es un producto de perfil moderado, diversificado en varios sectores.</p>
+                <span class="float-left col-1">></span><p class="col-11">Rendimiento esperado del 33% anual.</p>
+                <span class="float-left col-1">></span><p class="col-11">Monitorea todos los días la evolución de tu cuenta.</p>
+                <span class="float-left col-1">></span><p class="col-11">Podrás depositar en dólares y en bitcoin.</p>
+                <span class="float-left col-1">></span><p class="col-11">Reinversión de ganancias con período trimestral.</p>
+                <span class="float-left col-1">></span><p class="col-11">Podrás retirar tus intereses de manera mensual.</p>
+                <span class="float-left col-1">></span><p class="col-11">Automatiza el nivel de riesgo, menos estrés más confianza.</p>
+                <span class="float-left col-1">></span><p class="col-11">Sin limite de inversión.</p>
+                <span class="float-left col-1">></span><p class="col-11">Abre tu cuenta desde $500 dólares.</p> <br>
+                <button class="m-auto btn btn-primary d-flex" style="color: #000000!important;" [routerLink]="['/registrarse']">Quiero empezar</button><br>
+            </div>
+            
+            <div *ngIf="decide" class="m-auto web row col-md-12 col-lg-12 d-flex justify-content-center">
+                <div class="p-2 col-md-2 col-lg-2">
+                    <div class="col-md-12 col-lg-12 backgroundDec">
+                        <p class="col-12 pExcep">
+                            <span class="spanExept">Producto</span> 
+                            <br>
+                            <br>
+                            <br>
+                        </p>
+                    
+                        <p class="col-12 pExcep psize">Acerca de la estrategia.</p>
+
+                        <p class="col-12 pExcep">Tipo de inversión.</p>
+                    
+                        <p class="col-12 pExcep">Calificación de Axin.</p>
+                    
+                        <p class="col-12 pExcep">Acceso al depósito inicial.</p>
+                    
+                        <p class="col-12 pExcep">Acceso al interés o rendimientos.</p>
+                    
+                        <p class="col-12 pExcep">Inversión mínima.</p> <br>
+
+                    </div>
+                </div>
+             
+                <div class="p-2 col-md-2 col-lg-2">
+                    <div class="col-md-12 col-lg-12 backgroundDec">
+                        <p class="col-12 pExcep">
+                            <span class="spanExept">Crece</span> <br>
+                            <span class="spanExept">10%</span> <br>
+                            Tasa anual <br> 
+                        </p>
+                    
+                        <p class="col-12 pExcep psize">
+                            Préstamos
+                            con la
+                            máxima
+                            calificación
+                            de Axin y la
+                            mejor
+                            calidad de
+                            cartera.
+                        </p>
+                    
+                        <p class="col-12 pExcep">Renta fija.</p>
+
+                        <p class="col-12 pExcep">A+ a la C.</p>
+                    
+                        <p class="col-12 pExcep">En 1 año.</p>
+                    
+                        <p class="col-12 pExcep">Mensual.</p>
+                    
+                        <p class="col-12 pExcep">$500 USD.</p> <br>
+                    
+                      
+            
+                    </div>
+                </div>
+                <div class="p-2 col-md-2 col-lg-2">
+                    <div class="col-md-12 col-lg-12 backgroundDec">
+                        <p class="col-12 pExcep">
+                            <span class="spanExept">Impulso</span> <br>
+                            <span class="spanExept">12%</span> <br>
+                            Tasa anual <br> 
+                        </p>
+                    
+                        <p class="col-12 pExcep psize">
+                            Los
+                            préstamos
+                            con mayor
+                            rentabilidad
+                            tienen
+                            prioridad.
+                        </p>
+                    
+                        <p class="col-12 pExcep">Renta fija.</p>
+
+                        <p class="col-12 pExcep">A+ a la C.</p>
+                    
+                        <p class="col-12 pExcep">En 1 año.</p>
+                    
+                        <p class="col-12 pExcep">Al vencimiento.</p>
+                    
+                        <p class="col-12 pExcep">$500 USD.</p> <br>
+                    
+            
+                    </div>
+                </div>
+                <div class="p-2 col-md-2 col-lg-2">
+                    <div class="col-md-12 col-lg-12 backgroundDec">
+                        <p class="col-12 pExcep">
+                            <span class="spanExept">Inversionista</span> <br>
+                            <span class="spanExept">26%</span> <br>
+                            Promedio anual
+                        </p>
+                    
+                        <p class="col-12 pExcep psize">
+                            Tu cartera
+                            se diversifica
+                            y se adecúa
+                            a los
+                            mercados
+                            internacional
+                            es. Diseñada
+                            para
+                            minimizar el
+                            riesgo y
+                            maximizar
+                            tus
+                            ganancias.
+                        </p>
+                    
+                        <p class="col-12 pExcep">Renta variable.</p>
+
+                        <p class="col-12 pExcep">C1</p>
+                    
+                        <p class="col-12 pExcep">En 1 año.</p>
+                    
+                        <p class="col-12 pExcep">Mensual.</p>
+                    
+                        <p class="col-12 pExcep">$500 USD.</p> <br>
+                    
+                       
+            
+                    </div>
+                </div>
+                <div class="p-2 col-md-2 col-lg-2">
+                    <div class="col-md-12 col-lg-12 backgroundDec">
+                        <p class="col-12 pExcep">
+                            <span class="spanExept">Mercado</span> <br>
+                            <span class="spanExept">33%</span> <br>
+                            Promedio anual 
+                        </p>
+                    
+                        <p class="col-12 pExcep psize">
+                            Cuenta con la
+                            tecnología de
+                            operación más
+                            avanzada
+                            aplicada en
+                            mercados
+                            internacionales,
+                            conocida como
+                            arbitraje.
+                        </p>
+                    
+                        <p class="col-12 pExcep">Renta variable.</p>
+
+                        <p class="col-12 pExcep">C1</p>
+                    
+                        <p class="col-12 pExcep">En 1 año.</p>
+                    
+                        <p class="col-12 pExcep">Al vencimiento.</p>
+                    
+                        <p class="col-12 pExcep">$500 USD.</p> <br>
+                    
+                       
+            
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="decide" class="mob row col-12">
+
+                <div class="col-12">
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">Crece</span> <br>
+                        Préstamos
+                        con la
+                        máxima
+                        calificación
+                        de Axin y la
+                        mejor
+                        calidad de
+                        cartera.
+                    </p>
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">10%</span> <br>
+                        Tasa anual
+                    </p>
+                    <br>
+                    <button routerLink="/registrarse" class="m-auto btn btn-primary btn-block d-flex justify-content-center" style="color: white!important; background-color: black!important;">Seleccionar</button><br>
+                </div>
+                <div class="col-12">
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">Impulso</span> <br>
+                        Los
+                        préstamos
+                        con mayor
+                        rentabilidad
+                        tienen
+                        prioridad.
+                    </p>
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">12%</span> <br>
+                        Tasa anual
+                    </p>
+                    <br>
+                    <button routerLink="/registrarse" class="m-auto btn btn-primary btn-block d-flex justify-content-center" style="color: white!important; background-color: black!important;">Seleccionar</button><br>
+                </div>
+                <div class="col-12">
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">Inversionista</span> <br>
+                        Tu cartera
+                        se diversifica
+                        y se adecúa
+                        a los
+                        mercados
+                        internacional
+                        es. Diseñada
+                        para
+                        minimizar el
+                        riesgo y
+                        maximizar
+                        tus
+                        ganancias.
+                    </p>
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">26%</span> <br>
+                        Promedio anual
+                    </p>
+                    <br>
+                    <button routerLink="/registrarse" class="m-auto btn btn-primary btn-block d-flex justify-content-center" style="color: white!important; background-color: black!important;">Seleccionar</button><br>
+                </div>
+                <div class="col-12">
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">Mercado</span> <br>
+                        Cuenta con la
+                        tecnología de
+                        operación más
+                        avanzada
+                        aplicada en
+                        mercados
+                        internacionales,
+                        conocida como
+                        arbitraje.
+                    </p>
+                    <p class="col-12 pExcepmob">
+                        <span class="spanExept">33%</span> <br>
+                        Promedio anual
+                    </p>
+                    <br>
+                    <button routerLink="/registrarse" class="m-auto btn btn-primary btn-block d-flex justify-content-center" style="color: white!important; background-color: black!important;">Seleccionar</button><br>
+                </div>
+                
+            </div>
+    
+        </div>
+    </div>
+</section>
+

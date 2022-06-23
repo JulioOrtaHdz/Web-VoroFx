@@ -1,0 +1,35 @@
+<div class="download1">
+
+    <div class="head-mob">
+        <img loading="lazy" src="https://axincapital.app/images/ebook/logo-blue.png" alt="vorofx vorofx" class="logo">
+    </div>
+    <div class="info-content">
+        <img loading="lazy" src="assets/img/logo-blue.png" alt="vorofx vorofx" class="web">
+        <h1>Hemos recibido tus <br class="web">
+            datos correctamente.
+        </h1>
+        <p>
+            Tomar una decisión que influya directamente sobre tu dinero y tu futuro
+            no es nada fácil, pero este es el primer
+            gran paso que te hacía falta dar.
+
+
+
+        </p>
+        <p>
+            Esperamos que este ebook te ayude a ordenar  tus siguientes pasos hacia el mundo de las inversiones y te decidas a invertir tu realidad.
+        </p>
+        <button (click)="download()">
+            <span *ngIf="!load">Descarga el E-book ahora</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        </button>
+ 
+    </div>
+    <div class="background-img">
+        <img loading="lazy" src="assets/img/ebook/run.jpg" alt="vorofx">
+    </div>
+</div>
+
+  

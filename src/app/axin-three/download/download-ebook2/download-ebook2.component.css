@@ -1,0 +1,73 @@
+#book2 {
+    padding-top: 4rem !important;
+    padding-bottom: 5rem !important;
+    background: #ffffff;
+}
+
+h1 {
+    color: #0029FD;
+    font-size:28px;
+
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+
+.paragraph {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 0;
+
+}
+
+
+
+
+
+
+.d-flex-responsive {
+    display: flex!important;
+}
+
+.mob {
+    display: none;
+}
+
+.web {
+    display: block;
+} 
+
+@media (max-width: 968px) { 
+    .d-flex-responsive {
+        display: none!important;
+        visibility: hidden;
+    }
+
+    .mob {
+        display: block;;
+    }
+
+    .web {
+        display: none;
+    } 
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+  
+
+    .paragraph {        
+        font-size: 16px;
+    }
+
+}

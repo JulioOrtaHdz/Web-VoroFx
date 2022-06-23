@@ -1,0 +1,38 @@
+
+#logoLogin {
+    width: calc(140px - 3rem);
+}
+
+#confirmacion {
+    background-color: #f3f3f3!important;
+    height: 100vh!important;
+    max-height: 100%!important;
+}
+
+.headform {
+    background-color: #0029FD;
+}
+
+.bodyform {
+
+    border-radius: 10px!important;
+}
+
+.rounded-circle {
+    border-radius: 22px!important;
+    overflow: hidden!important;
+    -webkit-border-radius: 22px!important;
+    -moz-border-radius: 22px!important;
+    -ms-border-radius: 22px!important;
+    -o-border-radius: 22px!important;
+}
+
+button:hover{
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+button:disabled{
+    background-color: #a5a5a5;
+    border: none;
+}

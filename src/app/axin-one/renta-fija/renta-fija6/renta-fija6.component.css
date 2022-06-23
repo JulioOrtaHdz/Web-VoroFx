@@ -1,0 +1,78 @@
+
+#ganar {
+  
+    background-color: #004fff;
+}
+
+
+
+.btn {
+    background-color: #ffffff;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: white!important;
+    color: #004fff!important;
+
+}
+
+
+
+.btn:focus {
+    background-color: #ffffff!important;
+    color: #004fff!important;
+}
+
+
+input {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+::placeholder {
+    color:#004FFF!important;
+    font-style: italic!important;
+    
+}
+
+
+
+
+@media (max-width: 768px) {
+    #empieza {
+        padding: 3rem;
+       
+    }
+
+    .btn {
+        margin-top: 10px!important;
+    }
+
+    ::placeholder {
+        color:#000000!important;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #000000;
+        border-width: 1px!important;
+        border-style: solid!important;
+        border-color: #000000!important;
+        color: #ffffff!important;
+        margin-top: 10px;
+    }
+    
+
+    
+    .btn:focus {
+        background-color: #000000!important;
+        color: #ffffff!important;
+    }
+
+    p,a {
+        font-size: 8px!important;
+        text-align: center!important;
+    }
+}

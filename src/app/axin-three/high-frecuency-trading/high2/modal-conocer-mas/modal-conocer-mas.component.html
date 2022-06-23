@@ -1,0 +1,51 @@
+<div id="modalConocerMas" class="m-0 p-0 p-md-4">
+    <div class="p-4 col-12 row m-auto d-flex justify-content-center align-items-center">
+        <div class="col-12 mob">
+           <a mat-dialog-close>< Regresar</a>
+        </div>
+        <div class="col-md-12 d-flex justify-content-end web px-0">
+            <button  mat-dialog-close style="height: fit-content; border: none;">
+                <i class="far fa-times-circle" style="color: gray;"></i>
+            </button>
+          </div>
+        <div class="m-4 p-4 mob"></div>
+        <h1 class="title">Deja tu información, te contactaremos pronto.</h1>
+       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="m-0 p-0 col-12">
+            <div class="col-12 mt-4 mb-2 px-0">
+                <label for="mount" class="mb-2 ml-4">Nombre</label>
+                <input class="form-control" formControlName="name" type="text" onClick="this.select();">
+                <!-- <mat-hint *ngIf="error.name"><small style="color: red!important;">{{ error.name }}</small></mat-hint>
+                <mat-error  *ngIf="contactForm.controls['name'].errors?.required && contactForm.controls['name'].touched">Nombre requerido</mat-error> -->
+            </div> 
+            <div class="col-12 mb-2 px-0">
+                <label for="mount" class="mb-2 ml-4">Correo electrónico</label>
+                <input class="form-control" formControlName="mail" type="text" onClick="this.select();">
+                <!-- <mat-hint *ngIf="error.email"><small style="color: red!important;">{{ error.email }}</small></mat-hint>
+                <mat-error  *ngIf="contactForm.controls['email'].errors?.required && contactForm.controls['email'].touched">Correo electronico requerido</mat-error>
+                <mat-error  *ngIf="contactForm.controls['email'].errors?.email && contactForm.controls['email'].touched">Correo electronico invalido</mat-error> -->
+            </div>
+            <div class="col-12 mb-2 px-0">
+                <label for="mount" class="mb-2 ml-4">Teléfono</label>
+                <input type="tel" class="form-control" formControlName="phone"
+                    ng2TelInput
+                    [ng2TelInputOptions]="{initialCountry: 'Mx'}"
+                    (countryChange)="onCountryChange($event)" >
+                    <!-- <mat-hint *ngIf="error.number_phone"><small style="color: red!important;">{{ error.number_phone }}</small></mat-hint>
+                    <mat-error  *ngIf="contactForm.controls['number_phone'].errors?.required && contactForm.controls['number_phone'].touched">Teléfono celular requerido</mat-error>
+                    <mat-error  *ngIf="contactForm.controls['number_phone'].errors?.pattern && contactForm.controls['number_phone'].touched">Teléfono celular debe ser de tipo numerico</mat-error> -->
+            </div>
+            <div class="col-12 my-4 d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn-custom p-4" [disabled]="!contactForm.valid || load">
+                    <span *ngIf="!load" class="text-white">Enviar</span>
+                    <span *ngIf="load" class="spinner-grow spinner-grow-sm text-white" role="status" aria-hidden="true"></span>
+                    <span *ngIf="load" class="spinner-grow spinner-grow-sm text-white" role="status" aria-hidden="true"></span>
+                    <span *ngIf="load" class="spinner-grow spinner-grow-sm text-white" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+       </form>
+  
+
+       
+    </div> 
+    
+</div>

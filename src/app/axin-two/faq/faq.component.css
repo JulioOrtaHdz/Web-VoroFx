@@ -1,0 +1,66 @@
+
+
+.active {
+    background-color: #ebeef7!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: #bbbbbb!important;
+}
+.btn-default {
+    background-color: #f3f3f3;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: #bbbbbb!important;
+    font-family: 'Roboto';
+    color: #000000!important;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+
+.btn-default:focus {
+    outline: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #ebeef7!important;
+    color: #000000!important;
+}
+
+
+
+
+#faq {
+    height: auto !important;
+}
+
+.plus {
+    position: absolute!important;
+    right: 0px!important;
+}
+
+
+.card {
+    border: none !important;
+}
+
+.card-header {
+
+    background-color: transparent!important;
+    border: none!important;
+    
+}
+.card-body {
+ 
+    background-color: transparent!important;
+    border: none!important;
+    
+}
+
+button {
+    color: black!important;
+    text-decoration: none!important;
+    border: none!important;
+    background: transparent!important;
+}
+

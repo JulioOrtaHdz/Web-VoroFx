@@ -1,0 +1,49 @@
+#footer {
+    padding-top: 4rem !important;
+    padding-bottom: 5rem !important;
+    background: #000000;
+}
+
+.paragraph {
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+}
+
+a {
+    text-decoration: none!important;
+    font-weight: 700;
+    font-size: 12px;
+    color: white;
+}
+
+.d-flex-responsive {
+    display: flex!important;
+}
+
+.mob {
+    display: none;
+}
+
+.web {
+    display: block;
+} 
+
+@media (max-width: 968px) { 
+    .d-flex-responsive {
+        display: none!important;
+        visibility: hidden;
+    }
+
+    .mob {
+        display: block;;
+    }
+
+    .web {
+        display: none;
+    } 
+
+    .paragraph {        
+        font-size: 10px;
+    }
+}

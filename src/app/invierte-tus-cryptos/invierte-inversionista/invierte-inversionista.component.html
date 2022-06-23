@@ -1,0 +1,142 @@
+<div class="section rendimiento two" id="two">
+    <div class="content">
+        <!-- FLEX -->
+        <div class="head">
+            <!-- FLEX -->
+            <div class="tittle">
+                <h1>Inversionista</h1>
+            </div>
+            <div class="rendimiento">
+                <!-- FLEX -->
+                <!-- <div class="percent"> -->
+                <h1 class="percent">26%</h1>
+                <!-- </div> -->
+                <div class="text">
+                    <h3>Rendimiento</h3>
+                    <span>Promedio anual</span>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <!-- FLEX -->
+            <div class="body_content">
+                <!-- FLEX -->
+                <div class="list_container">
+                    <div class="list">
+                        <div class="item">
+                            <span>-</span> Retiro de interés
+                        </div>
+                        <div class="item">
+                            <span>-</span> Plazo
+                        </div>
+                        <div class="item">
+                            <span>-</span> Tipo de inversión
+                        </div>
+                        <div class="item">
+                            <span>-</span> Tipo de interés
+                        </div>
+                        <div class="item">
+                            <span>-</span> Inversión mínima
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            Mensual
+                        </div>
+                        <div class="item">
+                            1 año
+                        </div>
+                        <div class="item">
+                            Renta variable
+                        </div>
+                        <div class="item">
+                            Simple
+                        </div>
+                        <div class="item">
+                            $500 USD
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_calculate">
+                    <button class="wave" (click)="toggleModal($event)" id="btn_inversionista">
+                        <span class="btn_show">
+                            Calcular mi rendimiento
+                        </span>
+                        <!-- <span class="mob btn_show">
+                            Invertir mi realidad
+                        </span> -->
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal_container" (click)="toggleModal($event)" [ngClass]="modalOpen ? 'show' : ''">
+    <div class="modalInvertir">
+        <div class="btn_close" (click)="toggleModal($event)">
+            <img src="assets/img/invierte/btn_close.svg" alt="Close" class="ajust close_icon">
+        </div>
+        <div class="container">
+            <div class="fila tittle">
+                <h1>Inversionista</h1>
+                <h3>26% Rendimiento</h3>
+            </div>
+            <div class="fila monto">
+                <div class="label">Monto de inversión <span>(USD)</span></div>
+                <input type="number" placeholder="$500.00" value="500" id="montoInversionista" min="500" (input)="calculate()" [(ngModel)]="monto" [ngStyle]="!valido ? {'border': '1px solid red'} : {}">
+            </div>
+            <div class="fila range">
+                <div class="label">Plazo de inversión <span>(meses)</span></div>
+                <input type="range" min="0" max="12" value="0" id="mesesInversionista" (change)="calculate()" [(ngModel)]="meses">
+                <div class="numbers">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="num">
+                        1
+                    </div>
+                    <div class="num">
+                        2
+                    </div>
+                    <div class="num">
+                        3
+                    </div>
+                    <div class="num">
+                        4
+                    </div>
+                    <div class="num">
+                        5
+                    </div>
+                    <div class="num">
+                        6
+                    </div>
+                    <div class="num">
+                        7
+                    </div>
+                    <div class="num">
+                        8
+                    </div>
+                    <div class="num">
+                        9
+                    </div>
+                    <div class="num">
+                        10
+                    </div>
+                    <div class="num">
+                        11
+                    </div>
+                    <div class="num">
+                        12
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total_container">
+            <div class="total" id="totalInversionista">Total: ${{total.toFixed(2)}}</div>
+        </div>
+    </div>
+  </div>

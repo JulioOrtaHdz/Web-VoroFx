@@ -1,0 +1,15 @@
+
+  
+  #comisiones {
+    background-color: #f0f5fc !important;
+  }
+  
+  
+  @media (max-width: 768px) {
+
+    br {
+      display: none;
+    }
+    
+  }
+  

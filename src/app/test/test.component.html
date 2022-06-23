@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">titulo</th>
+                <th scope="col">autores</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let articulo of posts">
+                <td>{{articulo.titulo}}</td>
+                <td>
+                    <ul>
+                     
+                        <li *ngFor="let item of articulo.users">
+                            {{ item.autor }}
+                          
+                        </li>
+                    </ul>
+                </td>
+ 
+              </tr>
+
+            </tbody>
+          </table>
+    </div>
+
+</div> -->
+
+<!-- <style> </style> 
+<div style="background:#fbeeef; padding-top: 27px; margin:0; border-top-left-radius: 25px!important; border-top-right-radius: 25px!important;"> 
+
+</div>  
+<img loading="lazy" style="width: 60px; height: auto;" src="https://axincapital.com/assets/img/icopass.png" alt="error"> 
+<h1 style="font-size:1.5rem; font-weight: bold; margin-bottom: 2rem;">¡Aviso!</h1>
+<div style="background:#ffffff!important; padding-top: 27px; margin:0; border-top-left-radius: 25px!important; border-top-right-radius: 25px!important;"> 
+<h1 style="font-size:1rem; font-weight: bold;">this.error</h1>  -->

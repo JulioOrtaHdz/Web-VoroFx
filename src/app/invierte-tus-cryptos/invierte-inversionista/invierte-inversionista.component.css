@@ -1,0 +1,639 @@
+img.ajust {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mob {
+  display: none;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ***************************************** */
+/*                SECCION DOS                */
+/* ***************************************** */
+
+.section.rendimiento {
+  padding: 0 14%;
+  align-items: center;
+  color: #fff;
+  /* background-color: black; */
+
+
+  background-image: url('../../../assets/img/invierte/bg-section-1-1600.png');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section.rendimiento,
+.section.rendimiento .content,
+.section.rendimiento .head,
+.section.rendimiento .rendimiento,
+.section.rendimiento .body,
+.section.rendimiento .body_content,
+.section.rendimiento .list_container,
+.section.rendimiento .list {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+.section.rendimiento .content {
+  flex-direction: column;
+  width: 100%;
+  gap: 75px;
+}
+
+.section.rendimiento .content .head {
+  justify-content: space-between;
+  padding-right: 8%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.section.rendimiento .content .head .tittle h1 {
+  font-size: 68px;
+  font-weight: 500;
+}
+
+.section.rendimiento .content .head .rendimiento {
+  gap: 24px;
+  align-items: center;
+}
+
+.section.rendimiento .content .head .rendimiento .percent {
+  font-size: 68px;
+  font-weight: 300;
+  line-height: 60px;
+  color: #73E2AF;
+}
+
+.section.rendimiento .content .head .rendimiento .text h3 {
+  font-size: 31px;
+  font-weight: 300;
+}
+
+.section.rendimiento .content .head .rendimiento .text span {
+  font-size: 18px;
+}
+
+.section.rendimiento .content .body {
+  justify-content: flex-end;
+}
+
+.section.rendimiento .content .body .body_content {
+  flex-direction: column;
+  gap: 75px;
+}
+
+.section.rendimiento .content .body .body_content .list_container {
+  gap: 100px;
+}
+
+.section.rendimiento .content .body .body_content .list_container .list {
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.section.rendimiento .content .body .body_content .list_container .list span {
+  padding-right: 20px;
+}
+
+.section.rendimiento .content .body .body_content .btn_calculate button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  padding: 20px 35px;
+  font-size: 22px;
+  font-weight: 400;
+  border: 1px solid #fff;
+  color: #fff;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.section.rendimiento .content .body .body_content .btn_calculate button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all ease 0.3s;
+}
+
+.section.rendimiento .content .body .body_content .btn_calculate button:hover::after {
+  width: 100%;
+  transition: all ease 0.5s;
+}
+
+button#btn_inversionista:focus {
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+/* MODAL */
+
+.modal_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.modal_container .modalInvertir {
+  width: 1070px;
+  height: 672px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 50px));
+  position: absolute;
+  background-color: white;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  transition: all ease 0.2s;
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 10;
+
+  display: block;
+}
+
+.modal_container * {
+  z-index: 10;
+}
+
+.modal_container.show {
+  backdrop-filter: blur(2px) grayscale(1);
+  pointer-events: all;
+}
+
+.modal_container.show .modalInvertir {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal_container .modalInvertir .btn_close {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  z-index: 15;
+  pointer-events: all;
+}
+
+
+/* *********************************************** */
+
+
+.modal_container .modalInvertir {
+  height: auto;
+  max-width: 100%;
+  width: 880px;
+}
+
+.modal_container.show .modal {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal_container .modalInvertir .container,
+.modal_container .modalInvertir .container .fila.range .numbers {
+  display: flex;
+  display: flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+}
+
+.modal_container .modalInvertir .container {
+  flex-direction: column;
+  gap: 45px;
+  width: 100%;
+  padding: 50px 166px 75px;
+}
+
+.modal_container .modalInvertir .container .fila {
+  width: 100%;
+}
+
+.modal_container .modalInvertir .container .fila.tittle h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.modal_container .modalInvertir .container .fila.tittle h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.modal_container .modalInvertir .container .fila .label {
+  font-size: 18px;
+}
+
+.modal_container .modalInvertir .container .fila .label span {
+  font-size: 11px;
+  color: #828282;
+  font-style: italic;
+}
+
+.modal_container .modalInvertir .container .fila .label {
+  margin-bottom: 23px;
+}
+
+.modal_container .modalInvertir .container .fila input {
+  width: 100%;
+  outline: none;
+}
+
+.modal_container .modalInvertir .container .fila.monto input {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 8px 0 8px 25px;
+  border: 1px solid #6F6F6F;
+}
+
+.modal_container .modalInvertir .container .fila.range .numbers {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal_container .modalInvertir .container .fila.range .numbers .num {
+  font-size: 18px;
+  font-weight: 400;
+  width: 20px;
+  height: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.modal_container .modalInvertir .container .fila.range .numbers .num::before {
+  content: '';
+  position: absolute;
+}
+
+.modal_container .modalInvertir .total_container {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #31429F;
+}
+
+.modal_container .modalInvertir .total_container .total {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+
+@media (max-width: 1600px) {
+
+  /* .section.rendimiento {
+        background-image: url('../../../assets/img/invierte/bg-section-1-1600.png');
+        background-position: left center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: cover;
+    } */
+
+  .modal_container .modalInvertir {
+    width: 700px;
+  }
+
+  .modal_container .modalInvertir .container {
+    padding: 30px 100px 50px;
+    gap: 20px;
+  }
+
+}
+
+/* **************************************** */
+/*                  1366                    */
+/* **************************************** */
+
+@media (max-width: 1366px) {
+
+  /* .section.rendimiento {
+        background-image: url('../../../assets/img/invierte/bg-section-1-1366.png');
+        background-position: left center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: cover;
+    } */
+
+  .modal_container .modalInvertir {
+    width: 700px;
+  }
+
+  .modal_container .modalInvertir .container {
+    padding: 30px 70px 50px;
+    gap: 20px;
+  }
+
+  .modal_container .modalInvertir .total_container {
+    padding: 20px 0;
+  }
+}
+
+/* **************************************** */
+/*              RESPONSIVE                  */
+/* **************************************** */
+
+@media (max-width: 1100px) {
+
+  .web {
+    display: none !important;
+  }
+
+  .mob {
+    display: block;
+    width: 100%;
+  }
+
+  .mob-flex {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+  }
+
+  /* ***************************************** */
+  /*                SECCION DOS                */
+  /* ***************************************** */
+
+  .section.rendimiento {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background-image: url('../../../assets/img/invierte/bg-section-1-responsive.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section.rendimiento .content .head {
+    padding: 0;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    border: none !important;
+    gap: 18px;
+  }
+
+  .section.rendimiento .content .head .tittle {
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    text-align: end;
+    padding-bottom: 20px;
+  }
+
+  .section.rendimiento .content .head .rendimiento .percent {
+    color: #fff;
+  }
+
+  .section.rendimiento .content .body {
+    justify-content: center !important;
+  }
+
+  .section.rendimiento .content .body .body_content .list_container {
+    gap: 50px;
+  }
+
+  .section.rendimiento .content .body .body_content .list_container .list .item span {
+    padding-right: 13px;
+  }
+
+  .section.rendimiento .content .body .body_content .btn_calculate {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+  }
+
+  .section.rendimiento .content .body .body_content .btn_calculate button {
+    padding: 10px 20px 45px;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .modal_container .modal .btn_close {
+    width: 10px;
+    height: 10px;
+    top: 20px;
+    right: 50px;
+  }
+
+  .modal_container .modalInvertir {
+    width: 500px;
+  }
+
+  .modal_container .modalInvertir .container {
+    padding: 20px 50px 30px;
+    gap: 10px;
+  }
+
+  .modal_container .modalInvertir .container .fila.tittle h1 {
+    font-size: 26px;
+  }
+
+  .modal_container .modalInvertir .container .fila.tittle h3 {
+    font-size: 18px;
+  }
+
+  .modal_container .modalInvertir .container .fila .label {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .modal_container .modalInvertir .container .fila.monto input {
+    padding: 5px 0 5px 15px;
+    font-size: 14px;
+  }
+
+  .modal_container .modalInvertir .container .fila.range .numbers {
+    margin-top: 5px;
+  }
+
+  .modal_container .modalInvertir .container .fila.range .numbers .num {
+    font-size: 12px;
+    width: 14px;
+    height: 16px;
+  }
+
+  .modal_container .modalInvertir .total_container {
+    padding: 10px 0;
+  }
+
+  .modal_container .modalInvertir .total_container .total {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 580px) {
+  /*  */
+
+
+
+  .section.rendimiento .content .head .tittle h1 {
+    font-size: 45px;
+    font-weight: 400;
+  }
+
+  .section.rendimiento .content .head .rendimiento .percent {
+    font-size: 44px;
+    font-weight: 400;
+  }
+
+  .section.rendimiento .content .head .rendimiento .text h3 {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .section.rendimiento .content .head .rendimiento .text span {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .section.rendimiento .content .body .body_content .list_container .list .item {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .section.rendimiento .content .body .body_content .btn_calculate button {
+    font-size: 16px;
+
+    padding: 10px 20px 35px;
+  }
+
+  .modal_container .modal .btn_close {
+    top: 16px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .modal_container .modalInvertir {
+    width: 285px;
+    height: 445px;
+  }
+
+  .modal_container .modalInvertir .container {
+    padding: 35px 25px 70px;
+    gap: 32px;
+  }
+
+  .modal_container .modalInvertir .container .fila.tittle h1 {
+    font-size: 24px;
+  }
+
+  .modal_container .modalInvertir .container .fila .label {
+    font-weight: 400;
+  }
+
+  .modal_container .modalInvertir .container .fila .label span {
+    font-size: 9px;
+  }
+
+  .modal_container .modalInvertir .container .fila.monto input {
+    font-size: 12px;
+  }
+
+  .modal_container .modalInvertir .total_container {
+    padding: 45px 80px;
+  }
+
+  .modal_container .modalInvertir .container .fila.range .numbers .num::before {
+    content: '.';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+  }
+
+  .modal_container .modalInvertir .container .fila.range .numbers .num:nth-child(1):before,
+  .modal_container .modalInvertir .container .fila.range .numbers .num:nth-child(4):before,
+  .modal_container .modalInvertir .container .fila.range .numbers .num:nth-child(7):before,
+  .modal_container .modalInvertir .container .fila.range .numbers .num:nth-child(10):before,
+  .modal_container .modalInvertir .container .fila.range .numbers .num:nth-child(13):before {
+    content: '.';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+    display: none;
+  }
+
+}
+
+
+
+.wave {
+  overflow: hidden;
+  position: relative;
+}
+
+.waves {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  transform: scale(0);
+  z-index: 1;
+}
+
+.ripple-dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

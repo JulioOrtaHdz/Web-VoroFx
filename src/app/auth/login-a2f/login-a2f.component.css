@@ -1,0 +1,96 @@
+#logoLogin {
+  width: calc(140px - 3rem);
+}
+
+#confirmacion {
+  background-color: #f3f3f3 !important;
+  height: 100vh !important;
+  max-height: 100% !important;
+}
+
+.headform {
+  background-color: #0029FD;
+  cursor: pointer !important;
+}
+
+.bodyform {
+
+  border-radius: 10px !important;
+}
+
+.rounded-circle {
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  -webkit-border-radius: 22px !important;
+  -moz-border-radius: 22px !important;
+  -ms-border-radius: 22px !important;
+  -o-border-radius: 22px !important;
+}
+
+/* button:hover{
+} */
+
+
+button#btn{
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+
+button#btn:disabled {
+    background-color: #a5a5a5 !important;
+}
+
+.mat-form-field-underline {
+  display: none;
+}
+
+#code {
+  font-size: 5vh !important;
+
+  letter-spacing: 18px;
+}
+
+.line {
+  width: 100%;
+  position: relative;
+  background: none;
+}
+
+.line .border-char {
+  display: inline-block;
+  width: 16%;
+  padding: 0 10px;
+}
+
+.line .border-char .line-border {
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+
+
+input#code {
+  display: block;
+  /* margin: 2em auto; */
+  border: none;
+  padding: 0;
+  /* width: 10.5ch; */
+  width: 9ch;
+  background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/8.5ch 2px no-repeat;
+  font: 5ch droid sans mono, consolas, monospace;
+  font-weight: 100;
+  letter-spacing: 0.5ch;
+  /* outline: */
+}
+
+input#code:focus {
+  outline: none;
+  color: dodgerblue;
+}
+
+.mat-form-field-subscript-wrapper .mat-error{
+    margin: 5px 0 !important;
+}

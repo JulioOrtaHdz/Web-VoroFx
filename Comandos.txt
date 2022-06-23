@@ -1,0 +1,21 @@
+npm run prerender
+npm run serve:ssr
+
+
+ng g c nameComponent --module app (CLI)
+
+modulos y routing (lazy loading)
+ng g m nameComponent --routing (CLI)
+
+compilar
+npm run build:ssr (ANGULAR UNIVERSAL)
+ng build --prod --base-href /pruebas/ --deploy-url /pruebas/ (CLI)
+ng build --prod --base-href /blog/ --deploy-url /blog/ (CLI)
+ng serve (CLI)
+
+correr
+npm run serve:ssr (ANGULAR UNIVERSAL)
+npm start (ANGULAR UNIVERSAL)
+ng serve (CLI)
+
+

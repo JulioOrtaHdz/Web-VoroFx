@@ -1,0 +1,70 @@
+<section id="confirmacion" class="py-5 px-3 p-md-5 d-flex justify-content-between flex-column">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <a [routerLink]="['/home']"><img loading="lazy" id="logoLogin" src="assets/img/logo-black.png"
+              alt="vorofx vorofx"></a>
+        </div>
+      </div>
+      <div class="col-12" style="height: 58px;">
+        <!-- <h1 class="h4 text-center">Bienvenido a <strong>Axin  Capital</strong></h1> <br> -->
+      </div>
+      <div class="bg-white col-12 col-md-8 col-lg-6 col-xl-5 m-auto px-0 mx-0 rounded-circle">
+        <div class="col-md-12 col-lg-12 p-3 mx-0 headform" style="height: 56px;">
+          <!-- <p class="h7 text-white text-start my-0"><i class="fas fa-chevron-left"></i> Regresar</p> -->
+        </div>
+        <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-4">
+          <div class="my-4 mx-auto">
+            <h1 class="h4 text-center">Se ha cancelado tu suscripción</h1>
+            <p class="text-center p-0 m-0" style="color: #9e9fa1 !important;">
+              Ahora serás transferido a la página de inicio de Axin. Si no eres redirigido en <span id="tiempo">{{segundos}}</span> segundos haz clic en el botón.
+            </p>
+          </div>
+
+          <button class="btn btn-primary btn-block rounded-circle mx-3 mt-3" [routerLink]="['/']">
+              <span>Rederigir</span>
+            </button>
+  
+  
+          <!-- <div class="mb-3 mx-auto p-2 rounded-circle col-12" style="border: 1px solid #94acf3;">
+            <small>
+              <p class="text-center m-0 p-0" style="color: #7494f4!important;"><span
+                  style="border: 3px solid #94acf3; border-radius:18px; padding:2px;">&nbsp;&nbsp;<strong>!</strong>&nbsp;&nbsp;</span>
+                Si el correo no se encuentra en tu bandeja de entrada, revisa tu carpeta de SPAM.</p>
+            </small>
+          </div> -->
+  
+          <!-- <form class="bg-white rounded-circle w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+            <div class="form-row bg-white p-1 w-100">
+              <div class="col-md-12 col-lg-12 w-100">
+                
+              </div>
+            </div>
+  
+          </form> -->
+  
+        </div>
+  
+      </div>
+      <!-- <div class="col-12 mt-4 mx-auto">
+        <p class="text-center" style="color: #7494f4 !important;">
+          <small>
+            Contáctenos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+            Si tiene algún problema <br>
+          </small>
+        </p>
+      </div> -->
+    </div>
+  
+    <div class="contact_us">
+      <p class="text-center" style="color: #96a5c6 !important;">
+        <small>
+          Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+          Si tienes algún problema <br>
+        </small>
+      </p>
+    </div>
+  </section>
+  

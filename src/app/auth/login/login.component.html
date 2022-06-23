@@ -1,0 +1,142 @@
+<section id="login" class="py-5 px-3 p-md-5 d-flex justify-content-between flex-column">
+
+  <div class="container">
+
+    <div class="lang_content" id="lang_contentMain">
+      <button class="lang_change" (click)="openLangMenu(menu_lang)" (clickOutside)="openLangMenu(menu_lang, true)"><span>{{this.lang}}</span><i
+          class="ml-1 fas fa-chevron-down"></i></button>
+      <div class="options_lang hidden" #menu_lang (resize)="openLangMenu(menu_lang, true)" >
+        <div class="option">
+          <input type="radio" name="lang" value="es" id="ES" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="ES">
+            <img src="assets/img/ES.svg" alt="ES">
+              <div>ES</div>
+            </label>
+        </div>
+        <div class="option">
+          <input type="radio" name="lang" value="en" id="EN" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="EN">
+            <img src="assets/img/ENG.svg" alt="ENG">
+              <div>EN</div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="lang_content">
+      <button id="switch" onclick="changeLang()" style="display: none !important;"></button>
+
+      <button class="lang_change" id="toggle_lang_menu" (click)="openLangMenu()">
+        <span>{{ lang }}</span>
+        <i class="ml-1 fas fa-chevron-down"></i></button>
+      <div class="options_lang hidden" id="menu_lang" [ngClass]="hidden ? 'hidden' : ''">
+        <div class="option">
+          <input type="radio" name="lang" id="es" value="es" (change)="changeLang($event)"
+            [attr.checked]="lang == 'es' ? 'checked' : null">
+          <label for="es">
+            <img src="assets/img/ES.svg" alt="ES">
+            <div>ES</div>
+          </label>
+        </div>
+        <div class="option">
+          <input type="radio" name="lang" id="en" value="en" (change)="changeLang($event)"
+            [attr.checked]="lang == 'en' ? 'checked' : null">
+          <label for="en">
+            <img src="assets/img/ENG.svg" alt="ENG">
+            <div>EN</div>
+          </label>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <a [routerLink]="['/home']">
+          <img loading="lazy" id="logoLogin" src="assets/img/logo-black.png" alt="vorofx vorofx">
+        </a>
+      </div>
+      <div class="col-12" style="height: 58px;" id="space_void">
+        <!-- <h1 class="h4 text-center">{{ 'login.WelcomeInto' | translate }} <strong>Axin Capital</strong></h1>  -->
+        <!-- <br> -->
+        <!-- <br>
+        <br> -->
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+        class="bg-white col-12 col-md-8 col-lg-6 col-xl-5 m-auto px-0 mx-0 rounded-circle">
+        <div [routerLink]="['/registrarse']" class="col-md-12 col-lg-12 p-3 mx-0 headform">
+          <p class="h7 text-white text-center my-0">{{ 'login.NotaMember?' | translate }}<strong class="text-white">
+              {{ 'login.SignupNow!' | translate }}</strong></p>
+        </div>
+
+        <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-1 p-md-4">
+          <div class="my-4 mx-auto">
+            <h1 class="h4 text-center">{{ 'login.SignIn' | translate }}</h1>
+            <!-- <small class="text-center p-0 m-0"
+              style="color: #96a5c6 !important;">{{ 'login.ToAccessyourAccount' | translate }}</small> -->
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>{{ 'login.Email' | translate }}</span>*</mat-label>
+              <input matInput formControlName="email">
+              <mat-error *ngIf="loginForm.controls['email'].errors?.required && loginForm.controls['email'].touched">
+                Correo electronico requerido</mat-error>
+              <mat-error *ngIf="loginForm.controls['email'].errors?.email && loginForm.controls['email'].touched">Correo
+                electronico invalido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12 ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>{{ 'login.Password' | translate }}</span>*</mat-label>
+              <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password">
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="!hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye"></i></span>
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye-slash"></i></span>
+              <mat-hint *ngIf="error"><small style="color: red!important;">{{ error }}</small></mat-hint>
+              <mat-error
+                *ngIf="loginForm.controls['password'].errors?.required && loginForm.controls['password'].touched">
+                Contraseña requerida</mat-error>
+              <mat-error
+                *ngIf="loginForm.controls['password'].errors?.minLength && loginForm.controls['password'].touched">La
+                contraseña debe tener mínimo 8 caracteres</mat-error>
+
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 col-lg-12 d-flex justify-content-center mt-2">
+              <re-captcha id="recaptcha" name="recaptcha" required formControlName="captcha" [(ngModel)]="token"></re-captcha>
+          </div>
+
+          <button class="btn btn-primary btn-block rounded-circle mx-3 mt-3" type="submit"
+            [disabled]="!loginForm.valid  || load">
+            <span *ngIf="!load">Iniciar sesión</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          </button>
+          <a [routerLink]="['/recuperar_contraseña']" class="col-12 mt-3 mb-2 text-right">
+            <small class="pr-2">{{ 'login.ForgotYouPassword?' | translate }}</small>
+          </a>
+          <a [routerLink]="['/activar_cuenta']" class="col-12 mb-2 text-right">
+            <small class="pr-2">{{ 'login.SendConfirmationEmail' | translate }}</small>
+          </a>
+        </div>
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+  <div class="contact_us">
+    <p class="text-center" style="color: #96a5c6 !important;">
+      <small>
+        Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+        Si tienes algún problema <br>
+      </small>
+    </p>
+  </div>
+</section>

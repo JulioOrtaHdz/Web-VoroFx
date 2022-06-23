@@ -1,0 +1,215 @@
+<section id="login" class="py-5 px-3 p-md-5 d-flex justify-content-between flex-column">
+
+  <div class="container">
+
+    <div class="lang_content" id="lang_contentMain">
+      <button class="lang_change" (click)="openLangMenu(menu_lang)" (clickOutside)="openLangMenu(menu_lang, true)"><span>{{this.lang}}</span><i
+          class="ml-1 fas fa-chevron-down"></i></button>
+      <div class="options_lang hidden" #menu_lang (resize)="openLangMenu(menu_lang, true)" >
+        <div class="option">
+          <input type="radio" name="lang" value="es" id="ES" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="ES">
+            <img src="assets/img/ES.svg" alt="ES">
+              <div>ES</div>
+            </label>
+        </div>
+        <div class="option">
+          <input type="radio" name="lang" value="en" id="EN" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="EN">
+            <img src="assets/img/ENG.svg" alt="ENG">
+              <div>EN</div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <a [routerLink]="['/home']">
+          <img loading="lazy" id="logoLogin" src="assets/img/logo-black.png" alt="vorofx vorofx">
+        </a>
+      </div>
+      <div class="col-12" style="height: 58px;" id="space_void">
+      </div>
+
+      <form [formGroup]="formRegistro" (submit)="registrarPaso"
+        class="bg-white col-12 col-md-8 col-lg-6 col-xl-5 m-auto px-0 mx-0 rounded-circle">
+        <div [routerLink]="['/inicio_de_sesion']" class="col-md-12 col-lg-12 p-3 mx-0 headform">
+          <p class="h7 text-white text-center my-0">¿Ya estás registrado?<strong class="text-white">
+              ¡Inicia sesión!</strong></p>
+        </div>
+
+
+
+
+        <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-1 p-md-4">
+          <div class="my-3 mx-auto">
+            <h1 class="h4 text-center">Abre tu cuenta</h1>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-12 my-2">
+            <div class="row p-0 m-0 justify-content-center">
+              <input type="checkbox" id="personal" (change)="onChangeAccount($event)" formControlName="typeAccount">
+              <div class="switch w-100 d-flex justify-content-center align-items-center" for="personal">
+                <div class="barSwitch"></div>
+                <label for="personal" class="w-50 text-center labelSwitch personalLabel">Personal</label>
+                <label for="personal" class="w-50 text-center labelSwitch empresarialLabel">Empresarial</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-12 optional" [class]="{'empresa': empresarial}">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Empresa</span>*</mat-label>
+              <input matInput formControlName="business" (input)="reset('business')">
+              <mat-error
+                *ngIf="formRegistro.controls['business'].errors?.required && formRegistro.controls['business'].touched">
+                Nombre de la empresa requerido
+              </mat-error>
+              <mat-hint *ngIf="errors != null && errors.business">
+                <small style="color: red!important;">
+                  {{errors.business[0]}}
+                </small>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Correo electrónico</span>*</mat-label>
+              <input matInput formControlName="email" (input)="reset('email')" [(ngModel)]="correo">
+              <mat-error
+                *ngIf="formRegistro.controls['email'].errors?.required && formRegistro.controls['email'].touched">
+                Correo electronico requerido</mat-error>
+              <mat-error
+                *ngIf="formRegistro.controls['email'].errors?.pattern && formRegistro.controls['email'].touched">Correo
+                electronico invalido
+              </mat-error>
+              <mat-hint *ngIf="errors != null && errors.email">
+                <small style="color: red!important;">
+                  {{errors.email[0]}}
+                </small>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 col-lg-12 ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Contraseña</span>*</mat-label>
+              <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password"
+                (input)="valid(); reset('pass')" [(ngModel)]="passString">
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="!hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye"></i></span>
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye-slash"></i></span>
+              <mat-error
+                *ngIf="formRegistro.controls['password'].errors?.required && formRegistro.controls['password'].touched">
+                {{'Contraseña requerida'}}
+              </mat-error>
+              <mat-hint *ngIf="errors != null && errors.password">
+                <small style="color: red!important;">
+                  {{errors.password[0]}}
+                </small>
+              </mat-hint>
+
+            </mat-form-field>
+            <div style="width: 100%; background-color: #E6EBF1; height: 5px; border-radius: 10px;"
+              [style.display]="password.value ? 'block' : 'none'">
+              <div id="barSecurity" [ngClass]="passStep != 0 ? passSecurity[passStep].percent : ''">
+
+              </div>
+            </div>
+            <span class="span_text" style="color: #b0b0b0; font-size: 11px; padding-left: 10px;"
+              [style.display]="password.value ? 'block' : 'none'">Seguridad de la
+              contraseña: {{ passSecurity[passStep].text}}</span>
+          </div>
+
+          <ul class="mt-4 pl-3 listSecurity" [style.display]="password.value ? 'block' : 'none'">
+            <li>
+              <svg width="10" height="10" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path
+                  d="M2.49995 5C1.11928 5 0 3.88072 0 2.49995C0 1.11917 1.11928 0 2.49995 0C3.88062 0 5 1.11928 5 2.49995C5 3.88062 3.88072 5 2.49995 5ZM2.49995 4.49993C3.60455 4.49993 4.49993 3.60455 4.49993 2.49995C4.49993 1.39535 3.60455 0.499969 2.49995 0.499969C1.39535 0.499969 0.499969 1.39545 0.499969 2.49995C0.499969 3.60445 1.39545 4.49993 2.49995 4.49993Z"
+                  [attr.fill]="password.hasError('rango') ? '#FF0000' : '#00FF00'" />
+                <path
+                  d="M3.62194 1.89467C3.61073 1.95021 3.57618 1.99036 3.53735 2.02909C3.13189 2.43381 2.72673 2.83886 2.32187 3.24426C2.26725 3.29899 2.20366 3.32294 2.12886 3.29664C2.10082 3.28638 2.07531 3.27022 2.05406 3.24926C1.84697 3.04415 1.64068 2.83815 1.43516 2.63127C1.352 2.54771 1.35903 2.42745 1.44932 2.35734C1.51984 2.30231 1.61921 2.3123 1.68942 2.38231C1.84827 2.54081 2.00687 2.69949 2.16524 2.85833C2.17216 2.86678 2.17843 2.87574 2.18399 2.88513C2.18976 2.87625 2.19609 2.86774 2.20295 2.85965C2.57125 2.49101 2.93962 2.12251 3.30806 1.75414C3.36146 1.70073 3.42342 1.67831 3.4974 1.70145C3.56201 1.72183 3.60054 1.76728 3.61745 1.8321C3.61868 1.83689 3.62041 1.84168 3.62194 1.84647V1.89467Z"
+                  [attr.fill]="password.hasError('rango')  ? '#FF0000' : '#00FF00'" />
+              </svg>
+              Debe tener al menos 8 caracteres de longitud.</li>
+            <li>
+              <svg width="10" height="10" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path
+                  d="M2.49995 5C1.11928 5 0 3.88072 0 2.49995C0 1.11917 1.11928 0 2.49995 0C3.88062 0 5 1.11928 5 2.49995C5 3.88062 3.88072 5 2.49995 5ZM2.49995 4.49993C3.60455 4.49993 4.49993 3.60455 4.49993 2.49995C4.49993 1.39535 3.60455 0.499969 2.49995 0.499969C1.39535 0.499969 0.499969 1.39545 0.499969 2.49995C0.499969 3.60445 1.39545 4.49993 2.49995 4.49993Z"
+                  [attr.fill]="password.hasError('mayuscula') ? '#FF0000' : '#00FF00'" />
+                <path
+                  d="M3.62194 1.89467C3.61073 1.95021 3.57618 1.99036 3.53735 2.02909C3.13189 2.43381 2.72673 2.83886 2.32187 3.24426C2.26725 3.29899 2.20366 3.32294 2.12886 3.29664C2.10082 3.28638 2.07531 3.27022 2.05406 3.24926C1.84697 3.04415 1.64068 2.83815 1.43516 2.63127C1.352 2.54771 1.35903 2.42745 1.44932 2.35734C1.51984 2.30231 1.61921 2.3123 1.68942 2.38231C1.84827 2.54081 2.00687 2.69949 2.16524 2.85833C2.17216 2.86678 2.17843 2.87574 2.18399 2.88513C2.18976 2.87625 2.19609 2.86774 2.20295 2.85965C2.57125 2.49101 2.93962 2.12251 3.30806 1.75414C3.36146 1.70073 3.42342 1.67831 3.4974 1.70145C3.56201 1.72183 3.60054 1.76728 3.61745 1.8321C3.61868 1.83689 3.62041 1.84168 3.62194 1.84647V1.89467Z"
+                  [attr.fill]="password.hasError('mayuscula') ? '#FF0000' : '#00FF00'" />
+              </svg>
+              Debe tener al menos un carácter en minúscula.</li>
+            <li>
+              <svg width="10" height="10" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path
+                  d="M2.49995 5C1.11928 5 0 3.88072 0 2.49995C0 1.11917 1.11928 0 2.49995 0C3.88062 0 5 1.11928 5 2.49995C5 3.88062 3.88072 5 2.49995 5ZM2.49995 4.49993C3.60455 4.49993 4.49993 3.60455 4.49993 2.49995C4.49993 1.39535 3.60455 0.499969 2.49995 0.499969C1.39535 0.499969 0.499969 1.39545 0.499969 2.49995C0.499969 3.60445 1.39545 4.49993 2.49995 4.49993Z"
+                  [attr.fill]="password.hasError('minuscula') ? '#FF0000' : '#00FF00'" />
+                <path
+                  d="M3.62194 1.89467C3.61073 1.95021 3.57618 1.99036 3.53735 2.02909C3.13189 2.43381 2.72673 2.83886 2.32187 3.24426C2.26725 3.29899 2.20366 3.32294 2.12886 3.29664C2.10082 3.28638 2.07531 3.27022 2.05406 3.24926C1.84697 3.04415 1.64068 2.83815 1.43516 2.63127C1.352 2.54771 1.35903 2.42745 1.44932 2.35734C1.51984 2.30231 1.61921 2.3123 1.68942 2.38231C1.84827 2.54081 2.00687 2.69949 2.16524 2.85833C2.17216 2.86678 2.17843 2.87574 2.18399 2.88513C2.18976 2.87625 2.19609 2.86774 2.20295 2.85965C2.57125 2.49101 2.93962 2.12251 3.30806 1.75414C3.36146 1.70073 3.42342 1.67831 3.4974 1.70145C3.56201 1.72183 3.60054 1.76728 3.61745 1.8321C3.61868 1.83689 3.62041 1.84168 3.62194 1.84647V1.89467Z"
+                  [attr.fill]="password.hasError('minuscula') ? '#FF0000' : '#00FF00'" />
+              </svg>
+              Debe tener al menos un carácter en mayúscula.</li>
+            <li>
+              <svg width="10" height="10" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path
+                  d="M2.49995 5C1.11928 5 0 3.88072 0 2.49995C0 1.11917 1.11928 0 2.49995 0C3.88062 0 5 1.11928 5 2.49995C5 3.88062 3.88072 5 2.49995 5ZM2.49995 4.49993C3.60455 4.49993 4.49993 3.60455 4.49993 2.49995C4.49993 1.39535 3.60455 0.499969 2.49995 0.499969C1.39535 0.499969 0.499969 1.39545 0.499969 2.49995C0.499969 3.60445 1.39545 4.49993 2.49995 4.49993Z"
+                  [attr.fill]="password.hasError('number') ? '#FF0000' : '#00FF00'" />
+                <path
+                  d="M3.62194 1.89467C3.61073 1.95021 3.57618 1.99036 3.53735 2.02909C3.13189 2.43381 2.72673 2.83886 2.32187 3.24426C2.26725 3.29899 2.20366 3.32294 2.12886 3.29664C2.10082 3.28638 2.07531 3.27022 2.05406 3.24926C1.84697 3.04415 1.64068 2.83815 1.43516 2.63127C1.352 2.54771 1.35903 2.42745 1.44932 2.35734C1.51984 2.30231 1.61921 2.3123 1.68942 2.38231C1.84827 2.54081 2.00687 2.69949 2.16524 2.85833C2.17216 2.86678 2.17843 2.87574 2.18399 2.88513C2.18976 2.87625 2.19609 2.86774 2.20295 2.85965C2.57125 2.49101 2.93962 2.12251 3.30806 1.75414C3.36146 1.70073 3.42342 1.67831 3.4974 1.70145C3.56201 1.72183 3.60054 1.76728 3.61745 1.8321C3.61868 1.83689 3.62041 1.84168 3.62194 1.84647V1.89467Z"
+                  [attr.fill]="password.hasError('number') ? '#FF0000' : '#00FF00'" />
+              </svg>
+              Debe tener al menos un número (0-9).</li>
+            <li>
+              <svg width="10" height="10" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                <path
+                  d="M2.49995 5C1.11928 5 0 3.88072 0 2.49995C0 1.11917 1.11928 0 2.49995 0C3.88062 0 5 1.11928 5 2.49995C5 3.88062 3.88072 5 2.49995 5ZM2.49995 4.49993C3.60455 4.49993 4.49993 3.60455 4.49993 2.49995C4.49993 1.39535 3.60455 0.499969 2.49995 0.499969C1.39535 0.499969 0.499969 1.39545 0.499969 2.49995C0.499969 3.60445 1.39545 4.49993 2.49995 4.49993Z"
+                  [attr.fill]="password.hasError('caracter') ? '#FF0000' : '#00FF00'" />
+                <path
+                  d="M3.62194 1.89467C3.61073 1.95021 3.57618 1.99036 3.53735 2.02909C3.13189 2.43381 2.72673 2.83886 2.32187 3.24426C2.26725 3.29899 2.20366 3.32294 2.12886 3.29664C2.10082 3.28638 2.07531 3.27022 2.05406 3.24926C1.84697 3.04415 1.64068 2.83815 1.43516 2.63127C1.352 2.54771 1.35903 2.42745 1.44932 2.35734C1.51984 2.30231 1.61921 2.3123 1.68942 2.38231C1.84827 2.54081 2.00687 2.69949 2.16524 2.85833C2.17216 2.86678 2.17843 2.87574 2.18399 2.88513C2.18976 2.87625 2.19609 2.86774 2.20295 2.85965C2.57125 2.49101 2.93962 2.12251 3.30806 1.75414C3.36146 1.70073 3.42342 1.67831 3.4974 1.70145C3.56201 1.72183 3.60054 1.76728 3.61745 1.8321C3.61868 1.83689 3.62041 1.84168 3.62194 1.84647V1.89467Z"
+                  [attr.fill]="password.hasError('caracter') ? '#FF0000' : '#00FF00'" />
+              </svg>
+              Debe tener al menos un carácter especial (!@).</li>
+          </ul>
+
+          <div class="tyc d-flex justify-content-center align-items-center ml-3">
+            <input type="checkbox" name="tyc" id="tyc" formControlName="terms" required>
+            <label for="tyc" class="d-flex justify-content-center align-items-center checkbox_custom">
+              <mat-icon>done</mat-icon>
+            </label>
+            <label for="tyc">Aceptar <a routerLink="/terminos_y_condiciones">Términos y condiciones</a> </label>
+          </div>
+
+          <button class="btn btn-primary btn-block rounded-circle mb-3 mt-0 mx-3" (click)="registrarPaso()"
+            [disabled]="!formRegistro.valid || load">
+            <span *ngIf="!load">Crear cuenta</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+  <div class="contact_us">
+    <p class="text-center" style="color: #96a5c6 !important;">
+      <small>
+        Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+        Si tienes algún problema <br>
+      </small>
+    </p>
+  </div>
+</section>
+
+<ng-container #modal></ng-container>

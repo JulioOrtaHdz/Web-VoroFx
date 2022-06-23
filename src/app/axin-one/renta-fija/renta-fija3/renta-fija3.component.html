@@ -1,0 +1,64 @@
+<section id="grafica" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="h3 text-md-center text-sm-left font-weight-bold text-primary">Calcula tus rendimientos</h1>
+            </div>
+            <div class="col-md-12">
+                <h2 class="h4 text-md-center text-sm-left">Tus rendimientos serán mayores entre mayor sea el plazo.</h2>
+                <br><br>
+            </div>  
+
+            <div class="row col-lg-6 col-md-12 col-12">
+                <div class="row col-lg-12 col-md-12 col-12">
+                    <p class="col-lg-6 col-md-6 col-12 titu">Monto inicial</p>
+                    <p class="col-lg-6 col-md-6 col-12 tituval font-weight-bold text-primary">{{inversion | currency:'USD':'$':'1.0-0'}} USD</p>
+                </div>
+                <div class="middle col-lg-10 col-md-12 col-12">
+                    <div class="slider-container">
+                        <span class="bar"><span class="fill"></span></span>
+                        <input id="slider" class="slider" type="range" min="500" max="50000" value="10000" step="500"
+                            (input)="changeInversion($event)" [(ngModel)]="inversion" name="inversion"
+                            style="padding-left: 0px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row col-lg-6 col-md-12 col-12">
+                <div class="row col-lg-12 col-md-12 col-12">
+                    <p class="col-lg-6 col-md-6 col-12 titu">Plazo de inversión</p>
+                    <p class="col-lg-6 col-md-6 col-12 tituval font-weight-bold text-primary">{{anio}} años</p>
+                </div>
+                <div class="middle col-lg-10 col-md-12 col-12">
+                    <div class="slider-container2">
+                        <span class="bar2"><span class="fill2"></span></span>
+                        <input id="slider2" class="slider2" type="range" min="1" max="30" value="10"
+                            (input)="changeZoom($event)" [(ngModel)]="anio" name="anio" style="padding-left: 0px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row col-lg-12 col-md-12 col-12 mt-4">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div style="width: 10px; height: 10px; background-color: #73a3ea; margin-top: 0.7vw;"
+                        class="float-left"></div>
+                    <p> <span class="porcentaje">&nbsp;<strong  class="text-primary">10%</strong></span>&nbsp;<span class="tipo">Crece:</span> &nbsp; &nbsp;
+                        <br><span id="crece" class="ganancia font-weight-bold">{{ resulinversionista | currency:'USD':'$':'1.2-2' }}</span>&nbsp;
+                        &nbsp; </p>
+                </div>
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div style="width: 10px; height: 10px; background-color: #bad6f7; margin-top: 0.7vw;"
+                        class="float-left"></div>
+                    <p> <span class="porcentaje">&nbsp;<strong  class="text-primary">12%</strong></span>&nbsp;<span class="tipo">Impulso:</span> &nbsp; &nbsp;
+                        <br><span id="impulso" class="ganancia font-weight-bold">{{resulmercado | currency:'USD':'$':'1.2-2'}}</span>&nbsp; &nbsp;
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 col-md-12 col-12 contentImg">
+
+                <img loading="lazy" id="gra1" src="assets/img/simulador/grafica1.svg" alt="grafica">
+
+            </div>
+        </div>
+    </div>
+</section>

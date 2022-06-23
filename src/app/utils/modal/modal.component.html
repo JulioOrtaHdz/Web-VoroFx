@@ -1,0 +1,44 @@
+<div class="modal" [ngClass]="{'hide': hidden, 'dontCloseClickOutSide': clickOutSide, 'show': init}">
+
+  <div class="modal-background">
+
+  </div>
+
+  <div class="modal-container" (clickOutside)="closeOutSide()">
+    <div class="modal-body d-flex flex-column py-5 px-4 justify-content-center">
+      <div class="icon d-flex justify-content-center">
+        <ng-template [ngIf]="content.success" [ngIfElse]="successImg">
+          <div class="img">
+            <img src="assets\img\modal\success.png" alt="">
+          </div>
+        </ng-template>
+        <ng-template #successImg>
+          <div class="img">
+            <img src="assets\img\modal\error.png" alt="">
+          </div>
+        </ng-template>
+      </div>
+
+      <!-- <div class="_tittle text-center">¡Aviso!</div> -->
+      <div class="_tittle text-center">{{content.tittle}}</div>
+
+      <div class="_text-body text-center">
+        <p *ngFor="let text of content.text" [innerHTML]="text">
+          <!-- {{ text }} -->
+        </p>
+      </div>
+
+      <div class="_actions d-flex justify-content-center gap-2">
+        <button class="cerrar" [ngClass]="{'hide': !content.closeButton}" (click)="close()">Cerrar</button>
+        <button class="cancelar" [ngClass]="{'hide': !content.cancelButton}" (click)="cancel()">Cancelar</button>
+        <button class="informacion" [ngClass]="{'hide': !content.infoButton}" (click)="info()">Más información</button>
+        <button class="aceptar" [ngClass]="{'hide': !content.acceptButton}" (click)="accept()">Aceptar</button>
+
+        <button class="cancelarSalir" [ngClass]="{'hide': !content.cancelLeftModal}"
+          (click)="cancelLeftDialog()">Cancelar</button>
+        <button class="aceptarSalir" [ngClass]="{'hide': !content.acceptleftModal}"
+          (click)="acceptLeftDialog()">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button:disabled {
+    background-color: black!important;
+    opacity: inherit!important;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#intitucional6 {
+    background-image: url("../../../../assets/img/fondos/fondo4.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1ac68a!important;
+}
+
+input, select, textarea {
+    background-color: #4be394!important;
+    border-radius: 15px!important;
+    border: none!important;
+    color: white!important;
+}
+
+::placeholder {
+    color: white!important;
+}
+
+
+textarea:focus, input:focus{
+    outline: none!important;
+}
+  
+
+
+
+@media (max-width: 768px) {
+    #intitucional6 {
+        background-attachment: scroll !important;
+    }
+}

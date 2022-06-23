@@ -1,0 +1,196 @@
+<header id="vorofx-two">
+  <nav id="navtwo" class="navbar fixed-top navbar-expand-lg d-flex justify-content-between">
+    <a class="navbar-brand links_nav_two" [routerLink]="['/home']"><img loading="lazy" class="logo"
+        src="assets/img/logo-black.png" alt="vorofx vorofx"></a>
+    <button id="open-menu-vorofx-two" class="navbar-toggler m-0" type="button">
+      <img loading="lazy" width="35px" id="icon-menu-vorofx-two" src="assets/img/icono_menu_negro.png" alt="vorofx"><span
+        id="icon-close-vorofx-two" class="font-weight-bold mr-2">&#x2715;</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerAxinTwo">
+      <ul class=" navbar-nav m-auto" id="ul_items">
+
+        <li class="nav-item mob">
+          <a rel="dofollow" class="nav-link black links_nav_two" [routerLink]="['/home']">Inicio</a>
+        </li>
+
+        <div id="menu-web" class="btn-group web">
+          <button type="button" id="btnDrop" class="nav-link text-nowrap p-0" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Productos <i class="ml-1 fas fa-chevron-down"></i>
+          </button>
+
+          <div id="DropStatus" class="dropdown-menu dropdown-menu-right pb-0">
+            <div class="rombo"></div>
+            <p class="pl-4">Personal</p>
+            <a [routerLink]="['/renta_fija']" class="dropdown-item">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/3.png" alt="renta fija">
+                </div>
+                <div class="col-auto">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Renta Fija</strong></h1>
+                  <p class="pb-0 mb-0" style="font-size: 13px;">Gana rendimientos fijos</p>
+                </div>
+              </div>
+            </a>
+            <a [routerLink]="['/renta_variable'] " class="dropdown-item">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/1.png" alt="renta variable">
+                </div>
+                <div class="col-auto">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Renta Variable</strong></h1>
+                  <p class="pb-0 mb-0" style="font-size: 13px;">Sácale todo el potencial a tu dinero</p>
+                </div>
+              </div>
+            </a>
+            <hr style="color: black;">
+            <p class="pl-4">Empresa</p>
+            <a [routerLink]="['/portafolio_dedicado'] " class="dropdown-item last-item">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/2.png" alt="portafolio">
+                </div>
+                <div class="col-auto">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Portafolio Dedicado</strong></h1>
+                  <p class="pb-0 mb-0" style="font-size: 13px;">Nos adaptamos a tu modelo de negocio</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="menu-mob" class="dropdown show nav-item mob">
+          <button type="button" class="text-nowrap px-0" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Productos <i class="fas fa-chevron-down"></i>
+          </button>
+
+          <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuLinkOne"
+            style="border: none!important; background-color: #e0eaf7!important; border-radius: 20px;">
+            <p>Personal</p>
+            <a [routerLink]="['/renta_fija']" class="dropdown-item  link">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/3.png" alt="renta fija">
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Renta Fija</strong></h1>
+
+                </div>
+              </div>
+            </a>
+            <a [routerLink]="['/renta_variable'] " class="dropdown-item  link">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/1.png" alt="renta variable">
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Renta Variable</strong></h1>
+
+                </div>
+              </div>
+            </a>
+            <hr style="color: black;">
+            <p>Empresa</p>
+            <a [routerLink]="['/portafolio_dedicado'] " class="dropdown-item link"
+              style="text-decoration: none!important; color: black; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+              <div class="form-row">
+                <div class="col-auto">
+                  <img loading="lazy" class="pb-2" src="assets/img/navbar/2.png" alt="portafolio">
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <h1 class="font-weight-blod" style="font-size:15px;"><strong>Portafolio Dedicado</strong></h1>
+
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <li class="nav-item">
+          <a rel="dofollow" class="nav-link links_nav_two white text-nowrap"
+            [routerLink]="['/beneficios']">Beneficios</a>
+        </li>
+        <li class="nav-item">
+          <a rel="dofollow" class="nav-link links_nav_one white text-nowrap"
+            [routerLink]="['/aboutUs']">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a rel="dofollow" class="nav-link white link" href="https://axincapital.com/blog" target="blank">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a rel="dofollow" class="nav-link links_nav_two white" [routerLink]="['/comunicate']">Contacto</a>
+        </li>
+
+        <li class="nav-item mob">
+          <a rel="dofollow" class="nav-link links_nav_two white" [routerLink]="['/preguntas_frecuentes']">FAQs</a>
+        </li>
+        <li class="nav-item mob">
+          <div class="lang_content">
+            <button class="lang_change" id="toggle_lang_menu" (click)="openLangMenu(menu_langMob)" style="color:black !important;"  (clickOutside)="openLangMenu(menu_langMob, true)">
+                <span>{{lang}}</span>
+                <i class="ml-1 fas fa-chevron-down"></i></button>
+            <div class="options_lang hidden" #menu_langMob  (resize)="openLangMenu(menu_langMob, true)">
+              <div class="option">
+                <input type="radio" name="lang" id="es" value="es" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+                <label for="es">
+                  <img src="assets/img/ES.svg" alt="ES">
+                    <div>ES</div>
+                  </label>
+              </div>
+              <div class="option">
+                <input type="radio" name="lang" id="en" value="en" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+                <label for="en">
+                  <img src="assets/img/ENG.svg" alt="ENG">
+                    <div>EN</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+      <ul class="mt-2 navbar-nav mt-lg-0" id="btn_session">
+        <li class="nav-item web">
+          <div class="lang_content white" id="lang_contentMain">
+            <button class="lang_change" (click)="openLangMenu(menu_lang)" (clickOutside)="openLangMenu(menu_lang, true)"><span>{{this.lang}}</span><i
+                class="ml-1 fas fa-chevron-down"></i></button>
+            <div class="options_lang hidden" #menu_lang (resize)="openLangMenu(menu_lang, true)">
+              <div class="option">
+                <input type="radio" name="lang" value="es" id="ES" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+                <label for="ES">
+                  <img src="assets/img/ES.svg" alt="ES">
+                    <div>ES</div>
+                  </label>
+              </div>
+              <div class="option">
+                <input type="radio" name="lang" value="en" id="EN" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+                <label for="EN">
+                  <img src="assets/img/ENG.svg" alt="ENG">
+                    <div>EN</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item web">
+          <a class="nav-link links_nav_two white" [routerLink]="['/inicio_de_sesion']">Ingresar</a>
+        </li>
+        <li class="nav-item">
+          <a id="btn" class="text-center nav-link btn links_nav_two text-nowrap"
+            [routerLink]="['/registrarse']"><span><strong>Abre tu cuenta</strong></span></a>
+        </li>
+        <li class="nav-item mob">
+          <a class="text-center nav-link text-nowrap links_nav_two white" [routerLink]="['/inicio_de_sesion']">Ingresa a
+            Axin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

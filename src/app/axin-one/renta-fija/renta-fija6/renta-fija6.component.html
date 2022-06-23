@@ -1,0 +1,49 @@
+<section id="ganar">
+
+    <div class="row p-0 m-0">
+  
+      <div id="carouselExampleSlidesOnly" class="p-0 col-12 col-md-12 col-lg-6 col-xl-6 carousel slide" data-ride="carousel">
+        <div class="col-12 col-md-12 col-lg-12 col-xl-12 carousel-inner p-0">
+          <div class="carousel-item active">
+            <img loading="lazy" class="d-block w-100" src="assets/img/web1-2.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img loading="lazy" class="d-block w-100" src="assets/img/web1-3.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img loading="lazy" class="d-block w-100" src="assets/img/web1-1.jpg" alt="Third slide">
+          </div>
+        </div>
+      </div>
+  
+      <div id="empieza" class="py-5 px-3 p-md-5 m-auto col-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="col-md-12">
+          <h1 class="h3 text-left text-white font-weight-bold">Empieza hoy</h1>
+        </div>
+        <div class="col-md-12">
+          <h2 class="h4 text-left text-white">Registra tu correo electronico para <br> acceder a nuestro marketplace financiero.</h2>
+          <br><br>
+        </div>
+        <form #startForm=ngForm (ngSubmit)="onSubmit()"  class="col-lg-12 col-md-12 col-12 p-0">
+          <div class="form-row col-12 ">
+            <div class="col-xl-9 col-lg-7 col-md-7 col-12">
+              <label for="correo" hidden>Correo</label>
+              <input type="email" name="correo" class="form-control col-12" placeholder="Correo electrónico" [(ngModel)]="form.email" required>
+            </div>
+            <div class="col-xl-3 col-lg-5 col-md-5 col-12">
+              <button type="submit" 
+                class="btn btn-primary col-12">Quiero&nbsp;empezar</button>
+            </div>
+            <div class="col-12">
+              <br>
+              <p class="text-left text-white">Al enviar el correo electrónico, aceptas nuestros <a
+                  [routerLink]="['/terminos_y_condiciones']" class="text-yellow">Términos y Condiciones.</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+  
+    </div>
+  
+  </section>

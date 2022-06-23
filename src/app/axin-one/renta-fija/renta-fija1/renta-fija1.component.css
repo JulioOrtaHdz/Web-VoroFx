@@ -1,0 +1,63 @@
+
+
+#fija1 {
+  background-image: url("../../../../assets/img/fondos/fondo5.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #004fff;
+  height: 100vh;
+  max-height: 100%;
+}
+
+
+#fija1 .btn {
+  background-color: #ffffff !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #ffffff !important;
+  color: #004fff !important;
+}
+
+#fija1 .btn:focus {
+  color: #004fff!important;
+}
+
+
+#fija1 input {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  #fija1 {
+    background-attachment: scroll !important;
+  }
+
+  #fija1 .btn {
+    background-color: #000000 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  #fija1 .btn:focus {
+    color: #000000!important;
+  }
+  
+
+  #fija1 p, a {
+    font-size: 8px !important;
+  }
+
+}
+
+

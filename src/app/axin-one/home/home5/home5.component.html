@@ -1,0 +1,89 @@
+
+<section id="funciona" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="h3 text-md-center text-sm-left font-weight-bold" >Abre tu cuenta</h1>
+            </div>
+            <div class="col-12">
+                <h2 class="h4 text-md-center text-sm-left">
+                    No esperes más. ¡Comienza a invertir ahora!
+                </h2>
+                <br><br>
+            </div>
+        
+            <div class="row justify-content-center align-items-center padd">
+                <div class="col-6 col-sm-5 col-md-6 col-lg-3" style="padding: 0;">
+                    <img loading="lazy" (click)="imgI()" class="mx-auto d-block img1 wweb" src="assets/img/3.png" alt="img1">
+                    <h3 class="text-left img1 text1 mt-1 font-weight-light">Regístrate</h3>
+                </div>
+                <div class="col-6 col-sm-5 col-md-6 col-lg-3 web" style="padding: 0;">
+                    <img loading="lazy" (click)="imgII()" class="mx-auto d-block img2 wweb gray" src="assets/img/4.png" alt="img2">
+                    <h3 class="text-left img2 mt-1 font-weight-light">Verifícate</h3> 
+                </div>
+                <div class="col-6 col-sm-5 col-md-6 col-lg-3 mob" style="padding: 0;">
+                    <img loading="lazy" (click)="imgII()" class="mx-auto d-block img2 wmob gray" src="assets/img/4.1.png" alt="img3">
+                    <h3 class="text-left img2 text2 mt-1 font-weight-light">Verifícate</h3>
+                </div>
+                <div class="col-6 col-sm-5 col-md-6 col-lg-3" style="padding: 0;">
+                    <img loading="lazy" (click)="imgIII()" class="mx-auto d-block img3 wweb gray" src="assets/img/5.png" alt="img4">
+                    <h3 class="text-left img3 text3 mt-1 font-weight-light">Vuélvete inversionista</h3>
+                </div>
+                <div class="col-6 col-sm-5 col-md-6 col-lg-3" style="padding: 0;">
+                    <img loading="lazy" (click)="imgIV()" class="mx-auto d-block img4 wwebExep gray" src="assets/img/6.1.png" alt="img5">
+                    <h3 class="text-left img4 text4 mt-1 font-weight-light">Monitorea tu inversión</h3>
+                </div>
+            </div>
+            <br><br>
+    
+            <div class="row justify-content-center align-items-center mt-2 paddText"> 
+                <div *ngIf="img1" class="form-group  show col-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul  class="text-left">
+                        <li>Llena el formulario en línea desde tu celular o computadora.</li>
+                        <li>La protección de tus datos es nuestra prioridad, contamos con las más altas medidas de seguridad para proteger tu información.</li>
+                    </ul>
+                </div>
+                <div *ngIf="img2" class="form-group  show col-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul  class="text-left">
+                        <li>Envía los documentos requeridos en línea o a tu ejecutivo:</li>
+                        <li style="margin-left: 36px;"> Identificación oficial; ID o pasaporte vigentes.</li>
+                        <li style="margin-left: 36px;">Comprobante de domicilio.</li>
+                     
+                    </ul>
+                </div>
+                <div *ngIf="img3" class="form-group  show col-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul  class="text-left">
+                        <li>Realiza tu primer depósito vía SPEI o Bitcoin.</li>
+                        <li>Invierte en renta fija o renta variable, dependiendo de tus necesidades como inversionista.</li>
+                    </ul>
+                </div>
+                <div *ngIf="img4" class="form-group  show col-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul  class="text-left">
+                        <li>Da seguimiento a tu inversión todos los días desde nuestra plataforma.</li>
+                        <li>Serás invitado a eventos exclusivos, en donde podrás aprender de expertos financieros.</li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+    
+            <div class="row mx-auto">
+                <form #startForm=ngForm (ngSubmit)="onSubmit()" class="p-0 col-xl-12 col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                    <div class="form-row col-xl-12 col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                            <label for="correo" hidden>Correo</label>
+                            <input type="email" value="" name="correo" class="form-control col-12" placeholder="Correo electrónico"  [(ngModel)]="form.email" required>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-12 col-12">
+                            <button type="submit" class="btn btn-primary col-12" >Quiero&nbsp;empezar</button>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <br>
+                            <p class="text-left text-lg-center">Al enviar el correo electrónico, aceptas nuestros <a [routerLink]="['/terminos_y_condiciones']" style="color:#aaaf0d;">Términos y Condiciones.</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>        
+    </div>
+
+</section>

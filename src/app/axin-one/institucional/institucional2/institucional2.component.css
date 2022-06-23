@@ -1,0 +1,47 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#intitucional2 {
+    background-color: #ffffff!important;
+}
+
+
+input, select {
+    background-color: #4be394!important;
+    border-radius: 15px!important;
+    border: none!important;
+    color: black!important;
+}
+
+::placeholder {
+    color: black!important;
+}
+
+
+
+textarea:focus, input:focus{
+    outline: none!important;
+}
+  
+
+
+
+@media (max-width: 1200px) {
+    #intitucional2 {
+        height: auto!important;
+        padding-top: 5rem!important;
+        padding-bottom: 5rem!important;
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    
+    }
+}

@@ -1,0 +1,42 @@
+#invierte2 {
+    background: #ffffff;
+}
+
+.py-4 {
+    padding-top: 6rem!important;
+    padding-bottom: 6rem!important;
+}
+
+
+.title {
+    font-size:50px;
+    font-weight: 700!important;
+}
+
+
+.paragraph {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#circle {
+    width: 90px;
+}
+
+
+@media (max-width: 968px) { 
+    .title {
+        font-size:30px;
+    }
+    
+    
+    .paragraph {
+        font-size: 16px;
+    }
+
+    #circle {
+        width: 45px;
+    }
+    
+
+}

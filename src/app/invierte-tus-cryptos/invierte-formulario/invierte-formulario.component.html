@@ -1,0 +1,62 @@
+<div class="section four" id="form" (submit)="onSubmit($event)">
+    <div class="content">
+      <h1>¿Estás listo para invertir con tus cryptos?</h1>
+      <h3>Envíanos tus datos y nos pondremos en contacto contigo.</h3>
+      <form [formGroup]="form">
+        <!-- FELXBOX -->
+        <div class="columna">
+          <!-- FELXBOX -->
+          <div class="fila">
+            <div class="placeholder">Nombre(s) <span>*</span></div>
+            <input type="text" placeholder="Samantha" formControlName="name">
+          </div>
+          <div class="fila">
+            <div class="placeholder">Apellidos <span>*</span></div>
+            <input type="text" placeholder="Martinez García" formControlName="last_name">
+          </div>
+          <div class="fila">
+            <div class="placeholder">Teléfono <span>*</span></div>
+            <input type="tel" id="phone" placeholder="+52 (999)999-9999" formControlName="phone" ng2TelInput
+              [ng2TelInputOptions]="{initialCountry: 'Mx'}" (countryChange)="onCountryChange($event)" maxlength="10">
+          </div>
+        </div>
+        <div class="columna">
+          <div class="fila">
+            <div class="placeholder">Correo electrónico <span>*</span></div>
+            <input type="email" placeholder="ejemplo@ejemplo.com" formControlName="email">
+          </div>
+          <div class="fila">
+            <div class="placeholder">País <span>*</span></div>
+            <input type="text" placeholder="México" formControlName="country">
+          </div>
+          <div class="fila">
+            <!-- <input type="submit" value="Enviar" class="wave"> -->
+            <button class="wave" [disabled]="form.invalid || is_loading">Enviar</button>
+            <div class="pol">
+              <p>Al enviar tus datos aceptas las <strong><a [routerLink]="['/terminos_y_condiciones']" style="text-decoration: none; color: #000;"> políticas de privacidad</a></strong>, así como recibir noticias,
+                contenidos, comunicaciones relacionados con Axin Capital.</p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="modal_container" [ngClass]="modalOpen ? 'show' : ''" (click)="toggleModal($event)">
+    <div class="modalInvertir">
+      <div class="btn_close" (click)="toggleModal($event)">
+        <img src="assets/img/invierte/btn_close.svg" alt="Close" class="close_icon ajust">
+      </div>
+      <div class="tittle">
+        ¡Listo!
+      </div>
+      <div class="img">
+        <img src="assets/img/invierte/checked.jpg" alt="Checked" class="ajust">
+      </div>
+      <div class="text">
+        <p>Tus datos se han capturado correctamente</p>
+        <p> <strong>¡pronto nos pondremos en contacto!</strong></p>
+      </div>
+    </div>
+  </div>
+  

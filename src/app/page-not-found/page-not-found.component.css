@@ -1,0 +1,40 @@
+#nofound {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Arial';
+    color: #ffffff;
+    font-size: calc(1em + 3.4vw)!important;
+}
+
+
+h2 {
+    color: #ffffff;
+    font-family: 'Arial';
+    font-size: calc(1em + .3vw)!important;
+}
+
+.btn {
+    font-family: 'Arial';
+    font-size: calc(1em + .3vw)!important;
+    color: black!important;
+    background-color: #ffffff!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: #ffffff!important;
+}
+
+
+.btn:focus {
+    outline: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #ffffff!important;
+    color: #000000!important;
+}

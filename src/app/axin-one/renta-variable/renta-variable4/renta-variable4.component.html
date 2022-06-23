@@ -1,0 +1,192 @@
+<section class="carteras py-5 px-3 p-md-5 d-flex justify-content-center align-items-center" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h1 class="h3 text-md-center text-sm-left font-weight-bold">Estrategias Sólidas</h1>
+            </div>
+            <div class="col-12">
+                <h2 class="h4 text-md-center text-sm-left">Nuestro proceso de análisis y selección está basado en cinco puntos:</h2>
+            </div>
+        </div>
+        <div class="desktop">
+            <div class="row spots">
+                <div class="col-md-3 icns"  style="margin-bottom: -100px;">
+                    <img loading="lazy" src="assets/img/home-Axin-07.png" style="margin-left: 114px;" alt="vorofx1">
+                
+                </div>
+                <img loading="lazy" class="more" src="assets/img/mas.png" style="margin-bottom: -95px;" alt="vorofx2">
+                <div class="col-md-5 icns">
+                    <ul class="slider">
+                        <li >
+                            <img loading="lazy" id="slideImg" class="deca" src="assets/img/punto-diversificacion.png" style="margin-left: 36px;" alt="diversificacion">
+                        <li>
+                        
+                    </ul>
+                
+                </div>
+                <img loading="lazy" class="more" src="assets/img/igual.png" style="margin-bottom: -95px;" alt="vorofx">
+                <div class="col-md-3 icns" style="margin-bottom: -100px;">
+                    <img loading="lazy" src="assets/img/home-Axin-08.png" style="margin-right: 62px;" alt="vorofx2">
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 text-center" style="display: flex;">
+                <p class="titpts col-sm-4">Visión global de inversión</p><p class="tit5pts col-sm-4">Los 5 puntos de la cartera</p><p class="titpts col-sm-4">Decisión de inversión</p> 
+            </div><br><br>
+            <div class="col-md-12 info" style="align-items: center; display: flex;">
+                <div class="col-md-2" style="text-align: center; padding: 0; width: auto;">
+                    <button (click)="onRegresar()" class="btn btnprnxt"> < </button>
+                </div>
+                <div [ngSwitch]="mostrarimg" class="col-md-8 puntos">
+                    <div id="1" *ngSwitchCase="0">
+                        <h2 class="titulo" style="text-align: center;">Diversificación</h2>
+                        <p class="desc" style="text-align: center;">
+                            Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                            contra pérdidas patrimoniales duraderas (reales).
+                        </p>
+                    </div>
+                    <div id="2" *ngSwitchCase="1">
+                        <h2 class="titulo" style="text-align: center;">Diversificación</h2>
+                        <p class="desc" style="text-align: center;">
+                            Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                            contra pérdidas patrimoniales duraderas (reales).
+                        </p>
+                    </div>
+                    <div id="3" *ngSwitchCase="2">
+                        <h2 class="titulo" style="text-align: center;">Calidad</h2>
+                        <p class="desc" style="text-align: center;">
+                            Determina la estabilidad y calidad de una inversión previniendo los flujos de caja.
+                        </p>
+                    </div>
+                    <div id="4" *ngSwitchCase="3">
+                        <h2 class="titulo" style="text-align: center;">Flexibilidad</h2>
+                        <p class="desc" style="text-align: center;">
+                            Aprovecha valiosas oportunidades de inversión con una cartera de inversiones líquidas y
+                            una reserva en efectivo.
+                        </p>
+                    </div>
+                    <div id="5" *ngSwitchCase="4">
+                    <h2 class="titulo" style="text-align: center;">Solvencia</h2>
+                    <p class="desc" style="text-align: center;">
+                        ¡Evita el endeudamiento! Ésta es la causa más común de quiebras empresariales y
+                        pérdidas de patrimonio.
+                    </p>
+                    </div>
+                    <div id="6" *ngSwitchCase="5">
+                    <h2 class="titulo" style="text-align: center;">Valor</h2>
+                    <p class="desc" style="text-align: center;">
+                        El precio es lo que pago; el valor es lo que recibo a cambio.
+                    </p>
+                    </div>
+                    <div id="7"  *ngSwitchCase="6">
+                        <h2 class="titulo" style="text-align: center;">Diversificación</h2>
+                        <p class="desc" style="text-align: center;">
+                            Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                            contra pérdidas patrimoniales duraderas (reales).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2" style="text-align: center; padding: 0; width: auto;">
+                    <button (click)="onSiguiente()"  class="btn btnprnxt"> > </button>
+                </div>
+            </div>
+        </div>
+        <div class="movil">
+            <div class="row spots-movil">
+                <!-- <div class="col-md-12 icns">
+                    <img loading="lazy" class="img-movil" src="assets/img/home-Axin-07.png" alt="">
+                    <p class="titpts-movil">Visión global de inversión</p>
+                </div> 
+                <img loading="lazy" class="more-movil" src="assets/img/mas.png" alt=""> -->
+                <div [ngSwitch]="mostrarimg" class="col-md-12 icns">
+                    <ul class="slider">
+                        <li id="slide1" *ngSwitchCase="0">
+                        <img loading="lazy" class="deca-movil" src="assets/img/punto-diversificacion.png" alt="diversificacion">
+                        <li>
+                        <li id="slide2" *ngSwitchCase="1">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-diversificacion.png" alt="diversificacion">
+                        <li>
+                        <li id="slide3" *ngSwitchCase="2">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-calidad.png" alt="calidad">
+                        <li>
+                        <li id="slide4" *ngSwitchCase="3">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-flexibilidad.png" alt="flexibilidad">
+                        <li>
+                        <li id="slide5" *ngSwitchCase="4">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-solvencia.png" alt="solvencia">
+                        <li>
+                        <li id="slide6" *ngSwitchCase="5">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-valor.png" alt="valor">
+                        <li>
+                        <li id="slide1" *ngSwitchCase="6">
+                            <img loading="lazy" class="deca-movil" src="assets/img/punto-diversificacion.png" alt="diversificacion">
+                        <li>
+                    </ul>
+                    <!-- <p class="tit5pts-movil">Los 5 puntos de la cartera</p> -->
+                    <div class="col-md-12 info-movil" style="align-items: center; display: flex;">
+                        <div class="col-md-2" style="text-align: center; padding: 0; width: auto;">
+                            <button (click)="onRegresar()" class="btn btnprnxt"> < </button>
+                        </div>
+                        <div [ngSwitch]="mostrarimg" class="col-md-8 puntos-movil">
+                            <div  *ngSwitchCase="0">
+                                <h2 class="titulo" style="text-align: left;">Diversificación</h2>
+                                <p class="desc-movil" style="text-align: left;">
+                                    Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                                    contra pérdidas patrimoniales duraderas (reales).
+                                </p>
+                            </div>
+                            <div  *ngSwitchCase="1" class="pad">
+                                <h2 class="titulo" style="text-align: left;">Diversificación</h2>
+                                <p class="desc-movil" style="text-align: left;">
+                                    Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                                    contra pérdidas patrimoniales duraderas (reales).
+                                </p>
+                            </div>
+                            <div *ngSwitchCase="2" class="pad">
+                                <h2 class="titulo" style="text-align: left;">Calidad</h2>
+                                <p class="desc-movil" style="text-align: left;">
+                                    Determina la estabilidad y calidad de una inversión previniendo los flujos de caja.
+                                </p>
+                            </div>
+                            <div *ngSwitchCase="3" class="pad">
+                                <h2 class="titulo" style="text-align: left;">Flexibilidad</h2>
+                                <p class="desc-movil" style="text-align: left;">
+                                    Aprovecha valiosas oportunidades de inversión con una cartera de inversiones líquidas y
+                                    una reserva en efectivo.
+                                </p>
+                            </div>
+                            <div *ngSwitchCase="4" class="pad">
+                            <h2 class="titulo" style="text-align: left;">Solvencia</h2>
+                            <p class="desc-movil" style="text-align: left;">
+                                ¡Evita el endeudamiento! Ésta es la causa más común de quiebras empresariales y
+                                pérdidas de patrimonio.
+                            </p>
+                            </div>
+                            <div *ngSwitchCase="5" class="pad">
+                            <h2 class="titulo" style="text-align: left;">Valor</h2>
+                            <p class="desc-movil" style="text-align: left;">
+                                El precio es lo que pago; el valor es lo que recibo a cambio.
+                            </p>
+                            </div>
+                            <div  *ngSwitchCase="6">
+                                <h2 class="titulo" style="text-align: left;">Diversificación</h2>
+                                <p class="desc-movil" style="text-align: left;">
+                                    Favorece el incremento de valor a largo plazo con una adecuada diversificación. Protégete
+                                    contra pérdidas patrimoniales duraderas (reales).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="text-align: center; padding: 0; width: auto;">
+                            <button (click)="onSiguiente()" class="btn btnprnxt"> > </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img loading="lazy" class="more-movil" src="assets/img/mas.png" alt="">
+                <div class="col-md-12 icns">
+                    <img loading="lazy" class="img-movil" src="assets/img/home-Axin-08.png" alt="">
+                    <p class="titpts-movil">Decisión de inversión</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>

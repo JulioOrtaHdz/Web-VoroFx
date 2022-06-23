@@ -1,0 +1,87 @@
+<section id="intitucional1" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <!-- <video id="my_video_1" class="video-js vjs-default-skin"  preload="none" muted
+            data-setup='{"aspectRatio":"640:267", "playbackRates": [1, 1.5, 2]}' playsinline autoplay>
+            <source src="assets/video/portafolio2.mp4" type="video/mp4">
+        </video> -->
+    
+        <video id="my_video_1" class="video-js vjs-default-skin"  preload="auto" muted="muted"
+            data-setup='{"aspectRatio":"640:267", "playbackRates": [1, 1.5, 2]}' playsinline  allow="autoplay">
+            <source src="assets/video/portafolio2.mp4" type="video/mp4">
+        </video>
+    
+        <!-- <button (click)="play()" id="elem2">Play</button> -->
+        <div class="row my-4">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding-right: 0;">
+                    <h1 class="h3 font-weight-bold text-white text-left">Portafolio dedicado de inversión</h1>
+               
+                    <h2 class="h4 text-white text-left my-5">Trabajamos en una solución integral para potenciar el éxito de tu negocio con ganancias obtenidas de las cuentas de nuestros inversores.</h2>
+  
+                    <p class="h4 text-white text-left font-weight-bold mb-5">Totalmente compatible con los gestores de bolsa regulados.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                <form #registerContactForm=ngForm (ngSubmit)="onSubmit()" class="col-12 col-md-12 col-lg-12 col-xl-10 p-0 float-right">
+                    <p class="text-left text-xl-center text-white font-weight-bold">Solicitar una asesoría</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="*Nombre" id="name" name="name" [(ngModel)]="form.name" required>
+                    </div> 
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="*Correo electrónico" id="email" name="email" [(ngModel)]="form.email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control"
+                            name="phone" [(ngModel)]="form.phone" placeholder="*Teléfono" required
+                            ng2TelInput
+                            [ng2TelInputOptions]="{initialCountry: 'Mx'}"
+                            (countryChange)="onCountryChange($event)" />
+
+                    </div>
+                    <div class="form-group">
+                        <select id="lang" class="form-control" (change)="lang()"  required>
+                            <option value="" selected disabled>*Idioma preferido</option>
+                            <option value="Español"  >Español</option>
+                            <option value="Inglés"  >Inglés</option>
+                        
+                        </select> 
+                    </div>
+                    <div class="alert alert-danger" style="border-radius: 10px;" [hidden]="!error.name">
+                        {{error.name}}
+                    </div>
+                    <div class="alert alert-danger" style="border-radius: 10px;" [hidden]="!error.email">
+                        {{error.email}}
+                    </div>
+                    <div class="alert alert-danger" style="border-radius: 10px;" [hidden]="!error.phone">
+                        {{error.phone}}
+                    </div>
+                    <div class="alert alert-danger" style="border-radius: 10px;" [hidden]="!error.language">
+                        {{error.language}}
+                    </div>
+ 
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block btn-dark" [disabled]="!registerContactForm.valid">
+                            <span *ngIf="show !== true"> Solicitar</span>
+                            <span *ngIf="show === true" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            <span *ngIf="show === true" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            <span *ngIf="show === true" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+
+                        </button>
+                    </div>
+
+                    
+                    <div *ngIf="msj" class="alert alert-secondary alert-dismissible fade show mt-4" role="alert" style="background-color: #1ac68a;">
+                        <p class="text-center">
+                        Agradecemos tu interés por los servicios de Axin. <br>
+                        Tu información ha sido reenviada a nuestros asesores para que te ayuden en lo que necesitas.
+                        </p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <a [routerLink]="['/terminos_y_condiciones']">Ver términos y condiciones</a>
+                </form>
+              
+            </div>
+        </div>
+    </div>
+</section>

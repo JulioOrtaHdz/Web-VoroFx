@@ -1,0 +1,206 @@
+<section id="registro" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-start">
+
+  <div class="container">
+
+    <div class="lang_content">
+      <button id="switch" onclick="changeLang()" style="display: none !important;"></button>
+
+      <button class="lang_change" id="toggle_lang_menu" (click)="openLangMenu()">
+        <span>{{ lang }}</span>
+        <i class="ml-1 fas fa-chevron-down"></i></button>
+      <div class="options_lang hidden" id="menu_lang" [ngClass]="hidden ? 'hidden' : ''">
+        <div class="option">
+          <input type="radio" name="lang" id="es" value="es" (change)="changeLang($event)"
+            [attr.checked]="lang == 'es' ? 'checked' : null">
+          <label for="es">
+            <img src="assets/img/ES.svg" alt="ES">
+            <div>ES</div>
+          </label>
+        </div>
+        <div class="option">
+          <input type="radio" name="lang" id="en" value="en" (change)="changeLang($event)"
+            [attr.checked]="lang == 'en' ? 'checked' : null">
+          <label for="en">
+            <img src="assets/img/ENG.svg" alt="ENG">
+            <div>EN</div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <a [routerLink]="['/home']"><img loading="lazy" id="logoLogin" src="assets/img/logo-black.png" alt="vorofx vorofx"></a>
+      </div>
+      <div class="col-12" style="height: 58px">
+        <!-- <h1 class="h4 text-center">Bienvenido a <strong>Axin Capital</strong></h1> <br> -->
+      </div>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"
+        class="bg-white col-12 col-md-8 col-lg-6 col-xl-5 m-auto px-0 mx-0 rounded-circle">
+        <div [routerLink]="['/inicio_de_sesion']" class="col-md-12 col-lg-12 p-3 mx-0 headform">
+          <p class="h7 text-white text-center my-0">¿Ya estás registrado?<strong class="text-white"> ¡Inicia
+              sesión!</strong></p>
+        </div>
+        <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-1 p-md-4">
+          <div class="mt-4 mx-auto">
+            <h1 class="h4 text-center">Abre una cuenta</h1>
+          </div>
+          <div class="col-12 col-md-12 col-lg-12 mb-2">
+            <div class="row p-0 m-0 justify-content-center">
+              <div class="col-6 col-md-6 form-check form-check-inline mr-0 justify-content-center">
+                <input class="form-check-input" (change)="account($event)" type="radio" id="personal" name="account"
+                  value="Personal">
+                <label class="form-check-label" for=""><small>Personal</small></label>
+              </div>
+              <div class="col-6 col-md-6 form-check form-check-inline mr-0 justify-content-center">
+                <input class="form-check-input" (change)="account($event)" type="radio" id="empresarial" name="account"
+                  value="Empresarial" checked>
+                <label class="form-check-label" for=""><small>Empresarial</small></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Nombre de la empresa</span>*</mat-label>
+              <input matInput formControlName="name_business">
+              <mat-hint *ngIf="error.name_business"><small
+                  style="color: red!important;">{{ error.name_business }}</small></mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['name_business'].errors?.required && signupForm.controls['name_business'].touched">
+                Nombre de empresa requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Nombre</span>*</mat-label>
+              <input matInput formControlName="name">
+              <mat-hint *ngIf="error.name"><small style="color: red!important;">{{ error.name }}</small></mat-hint>
+              <mat-error *ngIf="signupForm.controls['name'].errors?.required && signupForm.controls['name'].touched">
+                Nombre requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Apellido paterno</span>*</mat-label>
+              <input matInput formControlName="first_last_name">
+              <mat-hint *ngIf="error.first_last_name"><small
+                  style="color: red!important;">{{ error.first_last_name }}</small></mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['first_last_name'].errors?.required && signupForm.controls['first_last_name'].touched">
+                Apellido paterno requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Apellido materno</span>*</mat-label>
+              <input matInput formControlName="second_last_name">
+              <mat-hint *ngIf="error.second_last_name"><small
+                  style="color: red!important;">{{ error.second_last_name }}</small></mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['second_last_name'].errors?.required && signupForm.controls['second_last_name'].touched">
+                Apellido materno requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Fecha de nacimiento</span>*</mat-label>
+              <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="birth_date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-hint *ngIf="error.birth_date"><small style="color: red!important;">{{ error.birth_date }}</small>
+              </mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['birth_date'].errors?.required && signupForm.controls['birth_date'].touched">
+                Fecha de nacimiento requerido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Teléfono celular</span>*</mat-label>
+              <input type="tel" matInput formControlName="number_phone" ng2TelInput
+                [ng2TelInputOptions]="{initialCountry: 'Mx'}" (countryChange)="onCountryChange($event)">
+
+              <mat-hint *ngIf="error.number_phone"><small style="color: red!important;">{{ error.number_phone }}</small>
+              </mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['number_phone'].errors?.required && signupForm.controls['number_phone'].touched">
+                Teléfono celular requerido</mat-error>
+                <mat-error
+                  *ngIf="signupForm.controls['number_phone'].errors?.pattern && signupForm.controls['number_phone'].touched">
+                  Teléfono celular debe ser de tipo numerico</mat-error>
+                  <mat-error
+                    *ngIf="signupForm.controls['number_phone'].errors?.maxlength && signupForm.controls['number_phone'].touched">
+                    Teléfono celular no debe contener más de 15 números</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Correo electrónico</span>*</mat-label>
+              <input matInput formControlName="email">
+              <mat-hint *ngIf="error.email"><small style="color: red!important;">{{ error.email }}</small></mat-hint>
+              <mat-error *ngIf="signupForm.controls['email'].errors?.required && signupForm.controls['email'].touched">
+                Correo electronico requerido</mat-error>
+                <mat-error *ngIf="signupForm.controls['email'].errors?.email && signupForm.controls['email'].touched">
+                  Correo electronico invalido</mat-error>
+                  <mat-error *ngIf="signupForm.controls['email'].errors?.pattern && signupForm.controls['email'].touched">
+                    Correo electronico invalido</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Contraseña</span>*</mat-label>
+              <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password">
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="!hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye"></i></span>
+              <span style="position: absolute; right:1px; color: #96a5c6;" *ngIf="hidePassword"
+                (click)="hidePassword = !hidePassword"><i class="fas fa-eye-slash"></i></span>
+              <mat-hint><small>Contraseña. Mín. 8 símbolos, al menos 1 letra minúscula, al menos 1 mayúscula, al menos 1
+                  carácter sin-letras</small> <br> <small *ngIf="error.password"
+                  style="color: red!important;">{{ error.password }}</small> </mat-hint>
+              <mat-error
+                *ngIf="signupForm.controls['password'].errors?.required && signupForm.controls['password'].touched">
+                Contraseña requerida</mat-error>
+              <mat-error
+                *ngIf="signupForm.controls['password'].errors?.pattern && signupForm.controls['password'].touched">
+                Contraseña. Mín. 8 símbolos, al menos 1 letra minúscula, al menos 1 mayúscula, al menos 1 carácter
+                especial</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 col-lg-12 d-flex justify-content-center mt-4">
+            <re-captcha id="recaptcha" name="recaptcha" required formControlName="captcha" [(ngModel)]="token"></re-captcha>
+          </div>
+
+          <div class="mt-2 col-md-12 col-lg-12 col-md-12 col-lg-12">
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="checkbox" formControlName="terms" required>
+              <label style="font-size: 0.70rem!important;" class="form-check-label textexep font terminosycondiciones"
+                for="terminos">Aceptar <a href="/terminos_y_condiciones">Términos y Condiciones</a></label>
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary btn-block rounded-circle mx-3 my-3" type="submit"
+            [disabled]="!signupForm.valid || load">
+            <span *ngIf="!load">Continuar</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          </button>
+
+        </div>
+
+      </form>
+      <div class="col-12 mt-4 mx-auto">
+        <p class="text-center" style="color: #96a5c6 !important;">
+          <small>
+            Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+            Si tienes algún problema <br>
+          </small>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

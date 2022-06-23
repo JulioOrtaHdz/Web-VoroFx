@@ -1,0 +1,32 @@
+<div class="download1">
+
+    <div class="head-mob">
+        <img loading="lazy" src="https://axincapital.app/images/ebook/logo-blue.png" alt="vorofx vorofx" class="logo">
+    </div>
+    <div class="info-content">
+        <img loading="lazy" src="assets/img/logo-blue.png" alt="vorofx vorofx" class="web">
+        <h1>Hemos recibido tus <br class="web">
+            datos correctamente.
+        </h1>
+        <p>
+            Estás a un paso de conocer los
+            aprendizajes de como invertir desde cero.
+        </p>
+        <p>
+            Recibirás un correo con el archivo para 
+            que puedas conservarlo en tu nube o 
+            bien descárgalo ahora.
+        </p>
+        <button (click)="download()">
+            <span *ngIf="!load">Descarga el E-book ahora</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        </button>
+    </div>
+    <div class="background-img">
+        <img loading="lazy" src="assets/img/ebook/brooke.png" alt="brooke">
+    </div>
+</div>
+
+  

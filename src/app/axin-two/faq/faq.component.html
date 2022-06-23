@@ -1,0 +1,275 @@
+
+<section id="faq" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                <h1 class="h3 text-left text-lg-center font-weight-bold">¿Comó podemos ayudarte?</h1> <br>
+                <h2 class="h4 text-left text-lg-center">
+                    Preguntas más frecuentes
+                </h2>
+              
+            </div>
+            <div class="row col-12 col-md-12 col-lg-12 mx-auto mb-4 ">
+                <button  class="col-4 btn-default" [ngClass]="{active: anadir === true}" (click)="onAnadir()">Añadir Fondos</button>
+                <button  class="col-4 btn-default" [ngClass]="{active: retirar === true}" (click)="onRetirar()">Retirar Fondos</button>
+                <button  class="col-4 btn-default" [ngClass]="{active: verificacion === true}"  (click)="onVerificacion()">Verificación</button>
+            </div>
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div id="accordion" *ngIf="anadir">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 exept">
+                                <button class="p-0 " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    ¿Cómo puedo añadir fondos a mi Cuenta Axin? <span class="plus">+</span>
+                                </button>
+                         
+                            </h5>
+                           
+                        </div>
+                    
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Puedes transferir fondos a tu cuenta Axin por Bitcoin o desde tu cuenta bancaria. Si tienes dinero en otra divisa distinta al dólar, podrás igualmente transferir fondos vía transferencia bancaria, y en el saldo se reflejará al tipo de cambio del día.  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Qué pasa si añado fondos en una divisa distinta a USD? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                En este caso, el dinero se convertirá de forma automática aplicando el tipo de cambio del banco correspondiente. No nos hacemos responsables de cualquier comisión adicional aplicada en este caso, ya que se trataría de una política que correría por cuenta de tu banco.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Puedo hacer un depósito desde una cuenta que no esté a mi nombre? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Desafortunadamente no. En cumplimiento con las políticas de prevención de blanqueo de capitales (AML, por sus siglas en inglés) únicamente se aceptan depósitos desde una cuenta con el mismo titular que la cuenta de Axin.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingfour">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                ¿Qué sucede si introduzco mal los datos de tranferencia? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Si los datos de la transferencia fueron introducidos incorrectamente puedes pedir que se retrase el proceso y confirmar el saldo de tu cuenta. Rogamos nos comuniques esta circunstancia cuanto antes por chat o escribiendo a hola@axincapital.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion" *ngIf="retirar">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 exept">
+                                <button class="p-0 " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    ¿Puedo modificar la cuenta bancaria a la que transfiero los fondos? <span class="plus">+</span>
+                                </button>
+                         
+                            </h5>
+                           
+                        </div>
+                    
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Sí. Puedes añadir varias cuentas bancarias para la retirada de fondos siempre que estén a tu nombre. Se trata de una política de seguridad necesaria destinada a proteger a nuestros inversores y a cumplir con la normativa contra el blanqueo de capitales (AML, atendiendo a sus siglas en inglés). La forma más conveniente para añadir la cuenta bancaria a la que transferir los fondos desde tu Cuenta Axin es desde tu perfil en el área de Banca, retirar fondos.  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Se me cobrará una comisión por retirar fondos? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                No :)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Qué importe puedo retirar? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Puedes solicitar retiros a partir de $50 USD (la totalidad o una parte), siempre que los fondos a retirar estén en tu wallet.
+                                Los fondos que estén en los demás productos de inversión a plazo tienen que llegar a su fecha de vencimiento antes de ser transferidos de vuelta a tu wallet.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingfour">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                ¿Cuánto tarda el dinero transferido en llegar a mi cuenta bancaria? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Axin procesa tu orden de retirada en un (1) día laborable.
+                                <br> <br>
+                                Las transferencias efectuadas dentro de la zona latam no suelen tardar más de dos (2) días laborables. En función de la hora en la que des la orden de retirada, deberías recibir los fondos transferidos en un máximo de dos (2) días laborables. Las transferencias fuera de la zona latam pueden tardar más dependiendo del banco pero, por norma general, nunca deberían tardar más de cinco (5) días laborables
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingfive">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                ¿Cómo puedo retirar dinero de mi Cuenta Axin? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Puedes hacer una transferencia interna de tu cuenta renta fija o renta variable a tu wallet, después hacer una solicitud de retiro directamente desde la plataforma. En el menú lateral izquierdo encontrarás el botón “Banca”, “Solicitud de retiro” que te permite indicar cuánto quieres retirar y el método de retiro que deseas usar.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion" *ngIf="verificacion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 exept">
+                                <button class="p-0 " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    ¿Por qué tengo que completar el proceso de verificación? <span class="plus">+</span>
+                                </button>
+                         
+                            </h5>
+                           
+                        </div>
+                    
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Trabajamos constantemente para luchar contra los delitos financieros y para garantizar la seguridad de nuestra plataforma. Como parte de este esfuerzo, verificamos la identidad de nuestros inversores. De esta forma, nos aseguramos de que eres tú quien está creando tu cuenta. Este proceso se lleva a cabo siguiendo todas las normativas aplicables del sector de pagos.  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Qué puedo hacer si tengo problemas con la verificación? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                En caso de salir del portal sin terminar el proceso, es cuestión de volver a ingresar utilizando tu e-mail y contraseña, si persiste los problemas favor de mandarnos un correo a hola@axincapital.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Cómo puedo iniciar el proceso de verificación? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Para iniciar el proceso de verificación
+                                <br><br>
+                                1. Inicia sesión en tu cuenta. <br>
+                                2. Haz clic Verificar cuenta en menú principal. <br>
+                                3. Subir documentos desde la plataforma. <br>
+                                <br><br>
+                                También puedes hacer clic en el botón que aparece en el correo electrónico que has recibido.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingfour">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                ¿Qué documentos se aceptan como acreditación de identidad? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Ciudadanos Latinoamericanos: documento de identidad nacional o pasaporte.
+                                <br><br>
+                                Ciudadanos Unión Europea: pasaporte.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingfive">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                ¿Qué documentos se aceptan como acreditación de domicilio? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Favor de subir un recibo a tu nombre, aceptamos los siguientes: Luz, Agua, Teléfono fijo, estado de cuenta bancaria.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingsix">
+                            <h5 class="mb-0 exept">
+                                
+                            <button class="p-0 collapsed" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                ¿Puedo enviar un documento escaneado? <span class="plus">+</span>
+                            </button>
+                            </h5>
+                        </div>
+                        <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordion">
+                            <div class="card-body pl-4">
+                                Si, puedes enviar de forma manual tus documentos al correo hola@axincapital.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+          
+            
+           
+        </div>
+    </div>
+</section>
+
+

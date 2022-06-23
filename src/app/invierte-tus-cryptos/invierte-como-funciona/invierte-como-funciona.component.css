@@ -1,0 +1,261 @@
+img.ajust {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .mob {
+    display: none;
+  }
+  
+  .section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+.section.one {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    background-color: #FBFBFB;
+}
+
+.section.one,
+.tarjetas,
+.tarjeta,
+.tar_header,
+.tar_body,
+.tar_titulo,
+.item_list,
+.item {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+}
+
+.section.one>h1 {
+    font-size: 52px;
+    font-weight: 300;
+}
+
+.section.one .tarjetas {
+    gap: 50px;
+}
+
+.section.one .tarjeta {
+    /* border: 1px solid; */
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 60px;
+    gap: 50px;
+    background-color: rgba(44, 82, 217, 0.05);
+    box-shadow: 3px 4px 5px rgba(0, 8, 49, 0.15);
+}
+
+.section.one .tarjeta .type_crypt {
+    font-size: 26px;
+    font-weight: 500;
+    color: #01A084;
+}
+
+/* HEADER */
+
+.section.one .tarjeta .tar_header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.section.one .tarjeta .tar_header .tar_num {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 65px;
+}
+
+.section.one .tarjeta .tar_header .tar_titulo {
+    width: 240px;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 2px solid;
+    padding: 30px 0;
+}
+
+.section.one .tarjeta .tar_header .tar_titulo .tipo {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+
+/* BODY */
+.section.one .tarjeta .tar_body {
+    flex-direction: column;
+    gap: 35px;
+}
+
+.section.one .tarjeta .tar_body .item_list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.section.one .tarjeta .tar_body .item_list .item {
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section.one .tarjeta .tar_body .item_list .item .icon {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.section.one .tarjeta .tar_body .item_list .item .text {
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    letter-spacing: 0.07em;
+}
+
+
+
+
+
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+/* ******************************************************************************************************************************************** */
+
+/* **************************************** */
+/*                  1366                    */
+/* **************************************** */
+
+@media (max-width: 1366px) {
+    /* SECTION ONE */
+    .section.one {
+        gap: 30px;
+    }
+
+    .section.one .tarjeta {
+        gap: 30px;
+        padding: 20px 40px;
+    }
+
+    .section.one .tarjeta .tar_titulo {
+        width: 230px;
+        padding: 20px 0;
+    }
+
+    .section.one .tarjeta .tar_body {
+        gap: 18px;
+    }
+
+    .section.one .tarjeta .tar_body .item_list,
+    .section.one .tarjeta .tar_body .item_list .item {
+        gap: 10px;
+    }
+
+}
+
+/* **************************************** */
+/*              RESPONSIVE                  */
+/* **************************************** */
+
+@media (max-width: 1100px) {
+
+    .web {
+        display: none !important;
+    }
+
+    .mob {
+        display: block;
+        width: 100%;
+    }
+
+    .mob-flex {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+    }
+
+    
+
+    /* SECTION ONE */
+
+    .section.one {
+        padding: 60px 0 85px;
+    }
+
+    .section.one .tarjetas {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section.one .tarjeta {
+        padding: 30px;
+        gap: 36px;
+    }
+
+    .section.one .tarjeta .tar_header {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .section.one .tarjeta .tar_header .tar_titulo {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        padding: 0 0 10px;
+        width: 360px;
+    }
+
+    .section.one .tarjeta .tar_body,
+    .section.one .tarjeta .tar_body .item_list {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .section.one .tarjeta .tar_body .item_list {
+        flex-direction: row;
+        gap: 36px;
+    }
+
+    .section.one .tarjeta .tar_body .item_list .item {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .section.one .tarjeta .tar_body .item_list .item .text {
+        font-size: 14px;
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 580px) {
+    /*  */
+
+    .section.one>h1 {
+        font-size: 30px;
+    }
+
+    .section.one .tarjeta .tar_header .tar_titulo {
+        width: 170px;
+    }
+
+    .section.one .tarjeta .tar_body .item_list .item .icon {
+        width: 26px;
+        height: 26px;
+    }
+    
+}

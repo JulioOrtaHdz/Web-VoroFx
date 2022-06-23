@@ -1,0 +1,36 @@
+<section id="variable1" class="py-5 px-3 p-md-5 d-flex justify-content-center align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            <h1 class="h1 text-md-center text-sm-left text-white font-weight-bold">
+                Invierte como un experto con <br class="web">
+                rendimientos al nivel que buscas
+            </h1>
+            <br><br>
+            <h1 class="h2 text-md-center text-sm-left text-white">
+                Gana en promedio el 33% anual en renta variable.
+            </h1> 
+            <br><br>
+            </div>
+            <form #startForm=ngForm (ngSubmit)="onSubmit()" class="p-0 col-xl-12 col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                <div class="form-row col-xl-12 col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 px-0">
+                        <label for="correo" hidden>Correo</label>
+                        <input type="email" value="" name="correo" class="form-control col-12" placeholder="Correo electrónico"  [(ngModel)]="form.email" required>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-12 px-0 pl-md-1">
+                        <button type="submit" class="btn btn-primary col-12 text-nowrap mt-1 mt-md-0">Quiero empezar</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 px-0">
+                        <br>
+                        <p class="text-center text-white">Al enviar el correo electrónico, aceptas nuestros <a [routerLink]="['/terminos_y_condiciones']" class="text-yellow">Términos y Condiciones.</a></p>
+                    </div>
+                </div>
+            </form>
+            
+        
+        </div>
+    </div>
+
+</section>

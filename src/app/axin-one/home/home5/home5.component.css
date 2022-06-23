@@ -1,0 +1,232 @@
+
+
+.padd {
+  margin-left: 6rem;
+  margin-right: 3rem;
+}
+.paddText {
+  margin-left: 5rem;
+  margin-right: 0rem;
+}
+
+
+
+h3 {
+  font-size: 1rem !important;
+}
+
+.text3,
+.text4 {
+  margin-left: -49px;
+}
+
+p {
+  color: black;
+  font-family: 'Roboto';
+}
+
+ul {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: blue; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+}
+
+.btn {
+  background-color: #ffffff !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #ffffff !important;
+  color: #004fff !important;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+.btn:hover {
+  transform: translate(0, -3px) !important;
+  -webkit-transform: translate(0, -3px) !important;
+  -o-transform: translate(0, -3px) !important;
+  -moz-transform: translate(0, -3px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background-color: #ffffff !important;
+  color: #004fff !important;
+}
+
+input {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+::placeholder {
+  color: #004fff !important;
+  font-style: italic;
+  font-family: 'Roboto';
+}
+
+
+
+.gray {
+  filter: grayscale(100%);
+}
+
+#funciona {
+  background-color: #f0f5fc;
+  padding: 6rem 0 6rem 0;
+}
+
+.show {
+  display: block;
+}
+
+.wweb {
+  width: 100% !important;
+}
+.wwebExep {
+  width: 30% !important;
+  margin: 0 !important;
+}
+
+.mob {
+  display: none;
+}
+
+.web {
+  display: block;
+}
+
+::placeholder {
+  color: #004fff !important;
+  font-style: italic;
+  font-family: 'Roboto';
+}
+
+@media (max-width: 992px) {
+  #funciona {
+    padding: 2rem;
+  }
+
+  .text3 {
+    margin-left: -16px;
+  }
+  .text4 {
+    margin-left: 53px;
+  }
+
+  .text1 {
+    margin-left: 27px;
+  }
+  .text2 {
+    margin-left: 107px;
+  }
+
+  @media (max-width: 600px) {
+    .text3 {
+      margin-left: 4px;
+    }
+    .text4 {
+      margin-left: 57px !important;
+    }
+
+    .text1 {
+      margin-left: 0px;
+    }
+    .text2 {
+      margin-left: 65px !important;
+    }
+
+    .padd {
+      margin-left: 2rem;
+      margin-right: 0rem;
+    }
+    .paddText {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    p {
+      font-size: 9px !important;
+    }
+  }
+
+  .mob {
+    display: block;
+  }
+
+  .web {
+    display: none;
+  }
+  .padd {
+    margin-bottom: 1rem;
+  }
+
+  .form-row {
+    margin-left: 0px;
+  }
+
+  .wweb {
+    width: 160% !important;
+  }
+
+  .wwebExep {
+    width: 47% !important;
+    margin: auto !important;
+  }
+
+  .wmob {
+    width: 47% !important;
+  }
+
+  .btn {
+    margin-top: 10px !important;
+  }
+
+  ::placeholder {
+    text-align: center !important;
+  }
+
+  .btn {
+    background-color: #004fff !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #004fff !important;
+    color: #ffffff !important;
+    margin-top: 10px !important;
+  }
+
+  .btn:focus {
+    outline: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #004fff !important;
+    color: #ffffff !important;
+  }
+
+  p {
+    font-size: 8px !important;
+    text-align: center !important;
+  }
+
+  .web {
+    display: none;
+  }
+}

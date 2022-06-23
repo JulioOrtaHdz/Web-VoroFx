@@ -1,0 +1,41 @@
+<div id="modalCalcularRendimiento" class="m-0 p-0">
+    <div class="p-4 col-12 row m-auto d-flex justify-content-center align-items-center">
+        <div class="col-12 mob">
+           <a mat-dialog-close>< Regresar</a>
+        </div>
+        <div class="col-md-12 d-flex justify-content-end web px-0">
+            <button  mat-dialog-close style="height: fit-content; border: none;">
+                <i class="far fa-times-circle" style="color: gray;"></i>
+            </button>
+          </div>
+        <div class="m-4 p-4 mob"></div>
+        <div class="col-12 my-4">
+            <label for="mount" class="mb-2">Monto de inversión (dólares)</label>
+            <input class="form-control" type="number" onClick="this.select();" [(ngModel)]="amount" (keyup)="getAmount()" (click)="getAmount()">
+        </div>
+        <div class="col-12">
+            <label for="slider" class="mb-0">Plazo de inversión (meses)</label>
+            <mat-slider
+                class="col-12 px-0"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [thumbLabel]="thumbLabel"
+                [ngModel]="value"
+                (input)="getMonth($event)"
+                aria-labelledby="example-name-label">
+            </mat-slider>
+        </div>
+        <div class="col-12 d-flex justify-content-between" style="padding-left: 22px!important; margin-top: -12px;">
+            <div *ngFor="let month of months let i = index">
+                <span [ngClass]="{'margin-left': i >= 1}">{{ month }}</span>
+            </div>
+        </div>
+       
+    </div>
+    
+    <div class="foot col-12 py-2 px-4">
+       <h1 class="text-right text1 mr-4">Total:</h1>
+       <h1 class="text-right text2 mr-4">{{ total | currency }}</h1>
+    </div>
+</div>

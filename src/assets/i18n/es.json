@@ -1,0 +1,14 @@
+{
+    "login": {
+        "WelcomeInto": "Bienvenido a",
+        "NotaMember?": "¿Aún no estás registrado?",
+        "SignupNow!": "¡Regístrate!",
+        "SignIn": "Inicia sesión",
+        "ToAccessyourAccount": "Para acceder a tu cuenta",
+        "Email": "Correo electrónico",
+        "Password": "Contraseña",
+        "ForgotYouPassword?": "¿Olvidaste tu contraseña?",
+        "SendConfirmationEmail": "Reenviar e-mail de activación"
+
+    }    
+}

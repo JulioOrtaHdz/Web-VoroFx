@@ -1,0 +1,529 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
+
+
+@keyframes spinner-grow {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+body {
+  min-height: 100vh !important;
+}
+
+/** Diseño general de scroll **/
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  width: 1px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/** Diseño de input intlTelInput**/
+.iti {
+  width: 100% !important;
+  margin-top: 6px !important;
+}
+
+/** Angular material **/
+
+/* Inputs */
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: .25em 0 0.10em 0 !important;
+}
+
+.mat-form-field-underline {
+  transform: scale3d(1, 0.5, 1) !important;
+  -webkit-transform: scale3d(1, 0.5, 1) !important;
+  -moz-transform: scale3d(1, 0.5, 1) !important;
+  -ms-transform: scale3d(1, 0.5, 1) !important;
+  -o-transform: scale3d(1, 0.5, 1) !important;
+}
+
+.mat-input-element {
+  font-size: 87% !important;
+  font-weight: 300 !important;
+}
+
+
+mat-label {
+  color: #0029FD;
+  font-weight: 300 !important;
+}
+
+mat-label span {
+  color: #96a5c6;
+}
+
+
+/** Mat Dialog custom styles **/
+
+
+.mat-dialog-container {
+  border-radius: 25px 25px 30px 30px;
+  background: #F6F6F6 0% 0% no-repeat padding-box;
+  padding: 0px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+}
+
+.mat-slider-track-background {
+  background-color: #AECEF4 !important;
+}
+
+.mat-accent .mat-slider-track-fill {
+  background: #0029FD 0% 0% no-repeat padding-box !important;
+}
+
+.mat-accent .mat-slider-track-fill,
+.mat-accent .mat-slider-thumb {
+  background: #0029FD 0% 0% no-repeat padding-box !important;
+}
+
+.mat-accent .mat-slider-thumb {
+  width: 35px;
+  height: 35px;
+  box-shadow: none !important;
+  bottom: -17px;
+  right: -18px;
+  top: -13px;
+}
+
+.mat-accent .mat-slider-track-fill,
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label {
+  background-color: #0029FD !important;
+}
+
+.mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+  height: 12px !important;
+  border-radius: 10px
+}
+
+.mat-slider.mat-slider-horizontal .mat-slider-track-background,
+.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+
+  .mat-dialog-container {
+    border-radius: 0px 0px 0px 0px !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -ms-border-radius: 0px 0px 0px 0px !important;
+    -o-border-radius: 0px 0px 0px 0px !important;
+  }
+
+  #modalCalcularRendimiento {
+    height: 100vh !important;
+    ;
+  }
+
+  #modalConocerMas {
+    height: 100vh !important;
+    ;
+  }
+
+}
+
+
+/* General  */
+
+.web {
+  display: block;
+}
+
+.mob {
+  display: none;
+}
+
+/* buttons & links*/
+
+a {
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translate(0, -3px) !important;
+  -webkit-transform: translate(0, -3px) !important;
+  -o-transform: translate(0, -3px) !important;
+  -moz-transform: translate(0, -3px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn {
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+.btn:focus,
+button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  /* color: black!important; */
+}
+
+
+
+/* Placeholders */
+
+::-webkit-input-placeholder {
+  color: #000000 !important;
+  font-style: italic;
+
+}
+
+::-moz-placeholder {
+  color: #000000 !important;
+  font-style: italic;
+
+}
+
+:-ms-input-placeholder {
+  color: #000000 !important;
+  font-style: italic;
+
+}
+
+::-ms-input-placeholder {
+  color: #000000 !important;
+  font-style: italic;
+
+}
+
+::placeholder {
+  color: #000000 !important;
+  font-style: italic;
+  font-weight: 300 !important;
+
+}
+
+/* Tipografia */
+
+.h1 {
+  font-size: calc(1em + 3.4vw) !important;
+}
+
+.h2 {
+  font-size: calc(1em + 0.8vw) !important;
+}
+
+
+.h3 {
+  font-size: calc(1em + 2.2vw) !important;
+}
+
+.h4 {
+  font-size: calc(1em + .3vw) !important;
+}
+
+.text-primary {
+  color: #004fff !important;
+}
+
+.text-dark {
+  color: #000000 !important;
+}
+
+.text-gray {
+  color: #87929b !important;
+}
+
+.text-yellow {
+  color: #e5ea2f !important;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* General  */
+
+  .web {
+    display: none;
+  }
+
+  .mob {
+    display: block;
+  }
+
+}
+
+@media (min-width: 1800px) {
+
+  .h1 {
+    font-size: calc(1em + 2.8vw) !important;
+  }
+
+}
+
+
+/* CAMBIO DE IDIOMA - ESTILO GENERAL*/
+
+#registro .container,
+#login .container {
+  position: relative;
+}
+
+.language-container {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+
+#lang {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#lang:focus-visible {
+  outline: none;
+}
+
+#translate-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#translate-item select {
+  color: #000;
+  font-size: calc(11px + 0.3rem) !important;
+}
+
+#translate-item.two select {
+  color: #000;
+}
+
+#translate-item select option {
+  color: #000;
+}
+
+#translate-item.color-lang select {
+  color: #fff;
+}
+
+@media screen and (max-width: 990px) {
+  #translate-item {
+    justify-content: start !important;
+    margin-left: 5px !important;
+  }
+
+  #translate-item select {
+    color: #000 !important;
+  }
+}
+
+
+/* ****************************************************************** */
+/* ****************************************************************** */
+/* **************************** MODAL ******************************* */
+/* ****************************************************************** */
+/* ****************************************************************** */
+
+/* ESTILOS SweetAlert2 TRUNCADOS */
+.swal2-popup {
+  padding: 0 !important;
+  border-radius: 25px !important;
+}
+
+.swal2-content {
+  padding: initial !important;
+}
+
+.swal2-actions {
+  height: 82px;
+}
+
+.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: 16px !important;
+  background: initial;
+  background-color: #1f4cf4 !important;
+  color: #fff;
+  font-size: 1.0625em !important;
+}
+
+.swal2-styled.swal2-cancel {
+  border: 0;
+  border-radius: 16px !important;
+  background: initial;
+  background-color: #cacbcf !important;
+  color: #fff;
+  font-size: 1.0625em !important;
+}
+
+/* MODAL PERSONALIZADO */
+._modal_head {
+  background: #fbeeef;
+  /* padding-top: 47px; */
+  height: 47px;
+  margin: 0;
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
+
+  /* position: relative;
+
+  animation: bg_Modal 5s ease-in-out infinite;
+
+  background: linear-gradient(90deg, rgba(230,126,34,1), rgba(192,57,43,1),rgba(230,126,34,1), rgba(192,57,43,1));
+
+  background-size: 400% 100%; */
+
+}
+
+@keyframes bg_Modal {
+    0%{background-position:0% 0%}
+    100%{background-position:90% 0%}
+}
+
+._modal_icon {
+  width: 50px;
+  height: auto;
+  margin-top: 25px;
+}
+
+._modal_tittle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+._modal_body {
+  background: #ffffff !important;
+  padding-top: 27px;
+  margin: 0;
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
+}
+
+._modal_text_content {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* ************************** ESTILOS DE EFECTO WAVE ************************ */
+/* ************************************************************************** */
+/* ************************************************************************** */
+
+
+
+.ripple{
+  position: relative;
+  overflow: hidden;
+  --bg-ripple: rgba(255,255,255, 0.4);
+}
+
+.ripple.ripple-white{
+--bg-ripple: rgba(150,150,150,0.3);
+}
+
+.ripple-container {
+  /*Con los siguientes valores de position, top, left, width y height aseguramos que el div tome todo el tamaño de su padre*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.ripple-effect {
+  position: absolute;
+  /*En javascript colocaremos el top y left de este span en el punto donde hizo click el usuario. Por eso es necesario trasladarlo en -50% en ambos ejes, para que el centro del efecto coincida con el click*/
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--bg-ripple);
+}
+
+.ripple-container.ripple-effect-animation .ripple-effect{
+  /*Aplicamos la animación que mas adelante definiremos con @keyframes*/
+  -webkit-animation: ripple .4s ease-in;
+  animation: ripple .4s ease-in;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    padding-bottom: 200%;
+    width: 200%;
+  }
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    padding-bottom: 200%;
+    width: 200%;
+  }
+}
+
+
+/* No zoom safari IOS */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px;
+	}
+}

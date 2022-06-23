@@ -1,0 +1,172 @@
+<section id="login" class="py-5 px-3 p-md-5 d-flex justify-content-between flex-column">
+
+  <div class="container">
+
+    <div class="lang_content" id="lang_contentMain">
+      <button class="lang_change" (click)="openLangMenu(menu_lang)" (clickOutside)="openLangMenu(menu_lang, true)"><span>{{this.lang}}</span><i
+          class="ml-1 fas fa-chevron-down"></i></button>
+      <div class="options_lang hidden" #menu_lang (resize)="openLangMenu(menu_lang, true)" >
+        <div class="option">
+          <input type="radio" name="lang" value="es" id="ES" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="ES">
+            <img src="assets/img/ES.svg" alt="ES">
+              <div>ES</div>
+            </label>
+        </div>
+        <div class="option">
+          <input type="radio" name="lang" value="en" id="EN" [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          <label for="EN">
+            <img src="assets/img/ENG.svg" alt="ENG">
+              <div>EN</div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-4">
+        <a [routerLink]="['/home']">
+          <img loading="lazy" id="logoLogin" src="assets/img/logo-black.png" alt="vorofx vorofx">
+        </a>
+      </div>
+      <div class="col-12" style="height: 58px;" id="space_void">
+      </div>
+
+      <form class="bg-white col-12 col-md-8 col-lg-8 col-xl-8 m-auto px-0 mx-0 rounded-circle"
+        autocomplete="new-password" [formGroup]="formDireccion">
+        <div class="col-md-12 col-lg-12 p-3 mx-0 headform">
+          <div class="h7 text-white text-center my-0" style="position: relative;">
+            <div style="position: absolute; cursor: pointer; width: 24px; height: 24px;"
+              [routerLink]="['/registrarse/paso_2']"><i class="fas fa-angle-left"></i></div>
+            ¿Cuál es tu domicilio?
+          </div>
+        </div>
+
+
+        <div class="form-row col-md-12 col-lg-10 m-auto bg-white p-1 p-md-4">
+            <div class="col-md-12 col-lg-12">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <span matPrefix *ngIf="select.value"
+                  class="flag-icon flag-icon-{{select.value | lowercase}} flag-icon-squared"
+                  style="margin-right: 5px;"></span>
+                <mat-label><span>Selecciona un país </span>*</mat-label>
+                <mat-select (selectionChange)="cambio($event)" #select formControlName="country">
+                  <mat-option>
+                    Ninguno
+                  </mat-option>
+                  <mat-option *ngFor="let country of countries" [value]="country.code">
+                    <span class="flag-icon flag-icon-{{country.code | lowercase}} flag-icon-squared"></span>
+                    {{country.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="formDireccion.controls['country'].errors?.required && formDireccion.controls['country'].touched">
+                  País requerido
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          <div class="col-md-12 col-lg-12">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label><span>Dirección</span>*</mat-label>
+              <input matInput formControlName="direction">
+
+              <mat-error
+                *ngIf="formDireccion.controls['direction'].errors?.required && formDireccion.controls['direction'].touched">
+                Dirección requerida
+              </mat-error>
+
+            </mat-form-field>
+          </div>
+
+          <!-- PRIMERA FILA -->
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label><span>Número exterior</span>*</mat-label>
+                  <input matInput formControlName="external">
+                  <mat-error
+                    *ngIf="formDireccion.controls['external'].errors?.required && formDireccion.controls['external'].touched">
+                    Número exterior requerido
+                  </mat-error>
+                  <mat-error
+                    *ngIf="formDireccion.controls['external'].errors?.number && formDireccion.controls['external'].touched">
+                    Número exterior debe ser de tipo numérico
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label><span>Código postal</span>*</mat-label>
+                  <input matInput formControlName="postal">
+                  <mat-error
+                    *ngIf="formDireccion.controls['postal'].errors?.required && formDireccion.controls['postal'].touched">
+                    Cídigo postal requerido
+                  </mat-error>
+                  <mat-error
+                    *ngIf="formDireccion.controls['postal'].errors?.number && formDireccion.controls['postal'].touched">
+                    Código postal debe ser de tipo numérico
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SEGUNDA FILA -->
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label><span>Estado / Región</span>*</mat-label>
+                  <input matInput formControlName="state">
+                  <mat-error
+                    *ngIf="formDireccion.controls['state'].errors?.required && formDireccion.controls['state'].touched">
+                    Estado / Región requerido
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label><span>Ciudad / Provincia</span>*</mat-label>
+                  <input matInput formControlName="city">
+                  <mat-error
+                    *ngIf="formDireccion.controls['city'].errors?.required && formDireccion.controls['city'].touched">
+                    Ciudad / Provincia requerido
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block rounded-circle mb-3 mt-3" (click)="onSubmit()"
+            [disabled]="!formDireccion.valid || load">
+            <span *ngIf="!load">Siguiente</span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="load" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+  <div class="contact_us">
+    <p class="text-center" style="color: #96a5c6 !important;">
+      <small>
+        Contáctanos: <strong><a href="mailto:hola@axincapital.com">hola@axincapital.com</a></strong> <br>
+        Si tienes algún problema <br>
+      </small>
+    </p>
+  </div>
+</section>
+
+<ng-container #modal></ng-container>

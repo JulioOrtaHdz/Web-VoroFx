@@ -1,0 +1,163 @@
+
+
+
+#solucionWeb {
+    background-color: #ffffff;
+    display: block;
+}
+
+
+
+#solucionWeb .card {
+    box-shadow: 4px 0px 15px 5px rgba(238, 241, 248, 1);
+    border: none;
+    border-radius: 2rem;
+    background-color: #f0f5fc;
+
+}
+
+
+
+#solucionWeb .percent{
+    font-size: 4rem;
+}
+
+#solucionWeb .h1Exep {
+    font-size: 5rem;
+}
+
+#solucionWeb h5{
+    font-size: calc(1em + 1.5vw)!important;
+}
+
+
+.color {
+    padding: 1rem;
+    margin: 13px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height: 19rem!important;
+    display: flex;
+    align-items: center;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    background-color: #f0f5fc;
+}
+
+.show {
+    display: none;
+}
+
+#vista:hover .show {
+    display: inline-block;
+}
+#vista:hover .hidde {
+    display: none;
+}
+#crece:hover .show {
+    display: inline-block;
+}
+#crece:hover .hidde {
+    display: none;
+}
+#impulso:hover .show {
+    display: inline-block;
+}
+#impulso:hover .hidde {
+    display: none;
+}
+
+.color:hover {
+    background-color: #adccf3;
+}
+
+#solucionMob {
+    display: none;
+}
+    
+
+@media(max-width: 768px) {
+    #solucionMob {
+        background-color: #ffffff;
+        display: block;
+    }
+
+    #solucionWeb {
+        display:none;
+    }
+    
+
+    .swiper-slide {
+      /* padding-left: 15px; */
+        width: 90%;
+        padding-top: 1rem; 
+        padding-bottom: 5rem;
+
+    }
+
+    .color {
+        width: 100%!important;
+        padding: 10px!important;
+        height: 15rem!important;
+    }
+
+
+    .fas {
+        font-size: 25px;
+        color: black;
+    }
+
+    .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after {
+        content: '';
+        outline:none!important;
+        border:0;
+    }
+
+    .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+        content: '';
+        outline:none!important;
+        border:0;
+    }
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        right: 70px;
+        left: auto;
+        top: 310px!important;
+    }
+
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        left: 70px;
+        right: auto;
+        top: 310px!important;
+    }
+
+
+    #solucionMob .card-title {
+        
+        font-size: 1.3rem;
+    }
+    
+
+    #solucionMob .percent{
+        font-size: 1.8rem;
+    }
+    
+    #solucionMob .h1Exep {
+        font-size: 3.5rem!important;
+    }
+    
+    #solucionMob h5{
+        font-size: 1rem;
+    }
+    
+
+
+
+
+}

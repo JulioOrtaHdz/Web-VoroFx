@@ -1,0 +1,21 @@
+
+#plataforma {
+  background-color: white;
+}
+
+
+
+.cruce {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+
+ul {
+  padding-left: 20px !important;
+}
+
+li {
+  list-style: none;
+  font-size: calc(1em + 0.3vw) !important;
+}
