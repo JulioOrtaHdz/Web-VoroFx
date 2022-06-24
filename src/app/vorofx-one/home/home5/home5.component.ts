@@ -2,7 +2,7 @@ import { AfterViewInit, Component, HostListener, Inject, OnDestroy, OnInit } fro
 import { Correo } from '../../../correo.model';
 import { Router } from '@angular/router';
 import { EmailService } from 'src/app/services/email.service';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -78,8 +78,8 @@ export class Home5Component implements OnInit, OnDestroy, AfterViewInit {
     this.imageIV.classList.remove("gray");
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document,private emailService: EmailService, private Subscription: AxinService, private router: Router) { }
-  
+  constructor(@Inject(DOCUMENT) private document: Document,private emailService: EmailService, private Subscription: VorofxService, private router: Router) { }
+
   ngAfterViewInit(): void {
     this.imageI = this.document.querySelector('.img1');
     this.imageII = this.document.querySelectorAll('img.img2');
@@ -92,7 +92,7 @@ export class Home5Component implements OnInit, OnDestroy, AfterViewInit {
     // this.imageIV.addEventListener('click', this.imgIV.bind(this));
   }
 
- 
+
 
   correos: Correo[] = [];
 
@@ -101,8 +101,8 @@ export class Home5Component implements OnInit, OnDestroy, AfterViewInit {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   onSubmit() {
@@ -114,7 +114,7 @@ export class Home5Component implements OnInit, OnDestroy, AfterViewInit {
        console.log(err);
        console.log(this.form);
      });
-    
+
 
     let correo1 = new Correo(this.form.email);
     this.emailService.agregarCorreo(correo1);

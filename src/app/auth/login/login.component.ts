@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { CanonicalService } from 'src/app/services/canonical.service';
 import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public hidden: boolean = false;
   tittle = "Ingresar | Axin Capital";
 
-  
+
   html: any;
   body: any;
 
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private formBuilder: FormBuilder,
-    private Axin: AxinService,
+    private Axin: VorofxService,
     private Token: TokenService,
     private router: Router,
     private Auth: AuthService,
@@ -194,7 +194,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngAfterViewInit(){
-    
+
     this.html = this.document.querySelector('html');
     this.body = this.document.querySelector('body');
 
@@ -212,7 +212,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   openLangMenu(e: any, close = false, isEvent = false): void {
     e.classList.toggle("hidden");
-    
+
     if(close){
         e.classList.add("hidden");
     }

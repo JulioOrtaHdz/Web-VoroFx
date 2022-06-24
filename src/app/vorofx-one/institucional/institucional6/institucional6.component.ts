@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 declare var $:any;
 @Component({
   selector: 'app-institucional6',
@@ -37,11 +37,11 @@ export class Institucional6Component implements OnInit, OnDestroy, AfterViewInit
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private Axin: AxinService,
+    private Axin: VorofxService,
     private router: Router
   ) { }
 
-  
+
 
   onCountryChange(event: any) {
    this.form.country = event.name;
@@ -70,7 +70,7 @@ export class Institucional6Component implements OnInit, OnDestroy, AfterViewInit
   handleResponse(data: any) {
     this.show = false;
     this.msj = true;
-    this.reset(); 
+    this.reset();
   }
 
   handleError(error: any) {
@@ -93,7 +93,7 @@ export class Institucional6Component implements OnInit, OnDestroy, AfterViewInit
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 }

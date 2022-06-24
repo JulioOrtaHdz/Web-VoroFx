@@ -1,7 +1,7 @@
 import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,7 +16,7 @@ export class ModalConocerMasComponent implements OnInit, OnDestroy {
   public load = false;
   contactForm: any;
 
-  private buildForm(): void { 
+  private buildForm(): void {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required] ],
       mail: ['', [Validators.required, Validators.email] ],
@@ -28,7 +28,7 @@ export class ModalConocerMasComponent implements OnInit, OnDestroy {
   }
 
   constructor(
-    private vorofxService: AxinService,
+    private vorofxService: VorofxService,
     private formBuilder: FormBuilder,
     public dialog: MatDialog,
     public ModalDialog: MatDialogRef<ModalConocerMasComponent>,
@@ -42,15 +42,15 @@ export class ModalConocerMasComponent implements OnInit, OnDestroy {
   }
 
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.load = false;
     this.buildForm();
   }
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   onSubmit() {
@@ -59,7 +59,7 @@ export class ModalConocerMasComponent implements OnInit, OnDestroy {
     this.contactForm.value.country = this.country;
 
     console.log("Datos enviados: ",this.contactForm.value);
-    
+
     this.vorofxService.invierteTuRealidad(this.contactForm.value).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
@@ -79,6 +79,6 @@ export class ModalConocerMasComponent implements OnInit, OnDestroy {
     Swal.fire('Axin Capital', '¡No se ha podido enviar la información intentelo de nuevo!', 'error');
     this.load = false;
   }
- 
+
 
 }

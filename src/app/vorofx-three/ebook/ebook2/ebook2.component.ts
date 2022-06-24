@@ -1,7 +1,7 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +13,7 @@ export class Ebook2Component implements OnInit, OnDestroy {
   ebookForm: any;
   public load = false;
 
-  private buildForm(): void { 
+  private buildForm(): void {
     this.ebookForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -23,7 +23,7 @@ export class Ebook2Component implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    private subscription: AxinService,
+    private subscription: VorofxService,
     private router: Router,
   ) { }
 
@@ -33,8 +33,8 @@ export class Ebook2Component implements OnInit, OnDestroy {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   onSubmit() {

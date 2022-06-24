@@ -1,7 +1,7 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm, FormBuilder } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
@@ -16,19 +16,19 @@ export class ActivationTokenComponent implements OnInit, OnDestroy {
   public load = false;
   activationForm: any;
 
-  public error = null; 
+  public error = null;
 
   private buildForm(): void {
- 
+
     this.activationForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email] ],
     });
-  
+
   }
 
   constructor(
     private formBuilder: FormBuilder,
-    private Axin: AxinService,
+    private Axin: VorofxService,
     private router: Router,
     private title: Title
     ) {
@@ -42,8 +42,8 @@ export class ActivationTokenComponent implements OnInit, OnDestroy {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   onSubmit() {
@@ -57,7 +57,7 @@ export class ActivationTokenComponent implements OnInit, OnDestroy {
   handleResponse(res: any) {
     this.router.navigateByUrl('/verificacion_de_cuenta');
     this.activationForm.value.email = null;
-    
+
   }
 
   handleError(error: any) {

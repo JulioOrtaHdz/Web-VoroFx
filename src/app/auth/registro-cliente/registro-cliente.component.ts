@@ -2,7 +2,7 @@ import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/cor
 import { ActivatedRoute, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
-import { AxinService } from '../../services/vorofx.service';
+import { VorofxService } from '../../services/vorofx.service';
 import { TokenService } from '../../services/token.service';
 import { EmailService } from '../../services/email.service';
 import { Correo } from '../../correo.model';
@@ -87,8 +87,8 @@ export class RegistroClienteComponent implements OnInit, OnDestroy {
     @Inject(DOCUMENT) private document: Document,
     private datePipe: DatePipe,
     private formBuilder: FormBuilder,
-    private Axin: AxinService,
-    private Subscription: AxinService,
+    private Axin: VorofxService,
+    private Subscription: VorofxService,
     private Token: TokenService,
     private router: Router,
     private emailService: EmailService,

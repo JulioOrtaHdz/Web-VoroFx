@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CanComponentDeactive } from 'src/app/guards/salir-registro.guard';
 import { CryptoServiceService } from 'src/app/services/crypto-service.service';
 import { Modal } from 'src/app/utils/classes/modal.class';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { LangToggleService } from 'src/app/services/lang-toggle.service';
 
 declare function ChangeLangLocalize(lang: string): any;
@@ -78,7 +78,7 @@ export class Paso2Component extends Modal implements OnInit, CanComponentDeactiv
     private router: Router,
     private crypto: CryptoServiceService,
     public resolve: ComponentFactoryResolver,
-    private vorofx: AxinService,
+    private vorofx: VorofxService,
     private toggleLang: LangToggleService
   ) {
     super(resolve);
@@ -157,7 +157,7 @@ export class Paso2Component extends Modal implements OnInit, CanComponentDeactiv
         this.modalMaintenaince();
         break;
     }
-    
+
     this.load = false;
   }
 
@@ -187,7 +187,7 @@ export class Paso2Component extends Modal implements OnInit, CanComponentDeactiv
 
   openLangMenu(e: any, close = false, isEvent = false): void {
     e.classList.toggle("hidden");
-    
+
     if(close){
         e.classList.add("hidden");
     }
@@ -198,7 +198,7 @@ export class Paso2Component extends Modal implements OnInit, CanComponentDeactiv
     this.toggleLang.toggle(this.lang);
   }
 
-  // // Se ajusta el placeholder y se almacena la instancia de 
+  // // Se ajusta el placeholder y se almacena la instancia de
   // // la librería TelInput
   // getElement(event: any) {
   //   this.telInputObj = event;

@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import {Title, Meta} from '@angular/platform-browser'; 
-import { AxinService } from 'src/app/services/vorofx.service';
+import {Title, Meta} from '@angular/platform-browser';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { CanonicalService } from 'src/app/services/canonical.service';
 import { LangToggleService } from 'src/app/services/lang-toggle.service';
 
@@ -35,7 +35,7 @@ export class ComunicateComponent implements OnInit, OnDestroy {
   public lang = localStorage.getItem("ljs-lang");
   tittle: string;
 
-  constructor(private Axin: AxinService, private title: Title, private metaTagService: Meta, private canonicalService: CanonicalService, private toggleLang: LangToggleService) { 
+  constructor(private Axin: VorofxService, private title: Title, private metaTagService: Meta, private canonicalService: CanonicalService, private toggleLang: LangToggleService) {
     this.canonicalService.setCanonicalURL();
 
     this.tittle = this.lang != 'es' ? 'Contact us | Axin Capital' : 'Contacto | Axin Capital';
@@ -90,8 +90,8 @@ export class ComunicateComponent implements OnInit, OnDestroy {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
 }

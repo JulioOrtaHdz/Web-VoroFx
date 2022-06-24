@@ -1,7 +1,7 @@
 import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { CanonicalService } from 'src/app/services/canonical.service';
 import Swal from 'sweetalert2';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm, FormBuilder } from '@angular/forms';
@@ -30,7 +30,7 @@ export class RegistroSocioComponent implements OnInit, OnDestroy {
 
   signupForm: any;
 
-  
+
   html: any;
   body: any;
 
@@ -44,8 +44,8 @@ export class RegistroSocioComponent implements OnInit, OnDestroy {
   public hidden: boolean = false;
   btnEnlaceLang: any;
 
-  private buildForm(): void { 
- 
+  private buildForm(): void {
+
     this.signupForm = this.formBuilder.group({
       name_business: ['', [Validators.required] ],
       name: ['', [Validators.required] ],
@@ -70,7 +70,7 @@ export class RegistroSocioComponent implements OnInit, OnDestroy {
     // console.log(this.country)
     console.log(this.dialCode)
    }
-  
+
   public error: any = [];
   public update:boolean = false;
 
@@ -78,12 +78,12 @@ export class RegistroSocioComponent implements OnInit, OnDestroy {
     @Inject(DOCUMENT) private document: Document,
     private datePipe: DatePipe,
     private formBuilder: FormBuilder,
-    private Axin: AxinService,
-    private Subscription: AxinService,
+    private Axin: VorofxService,
+    private Subscription: VorofxService,
     private router: Router,
     private title: Title,
     private metaTagService: Meta, private canonicalService: CanonicalService
-  ) {  
+  ) {
     this.canonicalService.setCanonicalURL();
 
     this.token = undefined;
@@ -118,23 +118,23 @@ export class RegistroSocioComponent implements OnInit, OnDestroy {
     const date = new Date();
     const fullyear = date.getFullYear();
     const day = date.getDate();
-    const month = date.getMonth(); 
+    const month = date.getMonth();
 
     const year =  fullyear - 18;
 
     console.log(year, month, day);
-    this.maxDate = new Date(year, month, day); 
+    this.maxDate = new Date(year, month, day);
 
-  } 
+  }
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   ngAfterViewInit(){
-    
+
     this.html = this.document.querySelector('html');
     this.body = this.document.querySelector('body');
 

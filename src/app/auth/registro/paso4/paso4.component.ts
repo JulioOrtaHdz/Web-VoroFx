@@ -1,7 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { CryptoServiceService } from 'src/app/services/crypto-service.service';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { timer } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
@@ -79,7 +79,7 @@ export class Paso4Component extends Modal implements OnInit, CanComponentDeactiv
     codigo: this.codigo
   });
 
-  constructor(private crypto: CryptoServiceService, private vorofx: AxinService, private router: Router, public resolve: ComponentFactoryResolver,
+  constructor(private crypto: CryptoServiceService, private vorofx: VorofxService, private router: Router, public resolve: ComponentFactoryResolver,
     private toggleLang: LangToggleService) {
     super(resolve);
   }
@@ -87,7 +87,7 @@ export class Paso4Component extends Modal implements OnInit, CanComponentDeactiv
   ngOnInit(): void {
   }
 
-  // Se ajusta el placeholder y se almacena la instancia de 
+  // Se ajusta el placeholder y se almacena la instancia de
   // la librería TelInput
   getElement(event: any) {
     this.telInputObj = event;
@@ -251,7 +251,7 @@ export class Paso4Component extends Modal implements OnInit, CanComponentDeactiv
       case "98": console.log("token incorrecto");                     // Este error solo puede ocurrir cuando el token ha sido manipulado,
         this.modalToken();                                           // no exista o no se haya verificado correctamente.
         break;
-      case "90": this.wrongCode = error.errors;                         // Este error ocurre cuando un dato no cumple con alguna de las validaciones 
+      case "90": this.wrongCode = error.errors;                         // Este error ocurre cuando un dato no cumple con alguna de las validaciones
         this.errorsReturned();
         break;
       default: console.log(error);                                            // Caso que el error no sea totalmente reconocido

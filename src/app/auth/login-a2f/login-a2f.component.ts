@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -50,7 +50,7 @@ export class LoginA2fComponent implements OnInit {
 
   form: any;
 
-  constructor(private route: ActivatedRoute, private redirectCom: Router, private Axin: AxinService) {
+  constructor(private route: ActivatedRoute, private redirectCom: Router, private Axin: VorofxService) {
 
     this.token = localStorage.getItem("tokenA2f");
 

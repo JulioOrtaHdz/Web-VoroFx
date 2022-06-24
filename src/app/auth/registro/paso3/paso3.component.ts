@@ -5,7 +5,7 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { Router } from '@angular/router';
 import { Modal } from 'src/app/utils/classes/modal.class';
 import { CanComponentDeactive } from 'src/app/guards/salir-registro.guard';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { LangToggleService } from 'src/app/services/lang-toggle.service';
 
 declare function ChangeLangLocalize(lang: string): any;
@@ -78,7 +78,7 @@ export class Paso3Component extends Modal implements OnInit, AfterViewInit, CanC
     private crypto: CryptoServiceService,
     private router: Router,
     public resolve: ComponentFactoryResolver,
-    private vorofx: AxinService,
+    private vorofx: VorofxService,
     private toggleLang: LangToggleService) {
     super(resolve);
     console.log(this.formDireccion.value.country)

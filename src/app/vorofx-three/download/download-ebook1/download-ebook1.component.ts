@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { environment } from 'src/environments/environment';
 
 
@@ -13,14 +13,14 @@ import { environment } from 'src/environments/environment';
 export class DownloadEbook1Component implements OnInit, OnDestroy {
   public load:boolean = false;
   blob: any;
-  private baseUrl = environment.url_login; 
+  private baseUrl = environment.url_login;
 
-  constructor( 
+  constructor(
     @Inject(DOCUMENT) private document: Document,
-    private http: HttpClient, private vorofxService: AxinService
-  ) { 
+    private http: HttpClient, private vorofxService: VorofxService
+  ) {
 
-  } 
+  }
 
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class DownloadEbook1Component implements OnInit, OnDestroy {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
+
   }
 
   download(): any {
@@ -38,20 +38,20 @@ export class DownloadEbook1Component implements OnInit, OnDestroy {
 
       console.log(data);
       this.blob = new Blob([data], {type: 'application/pdf'});
-    
+
       var downloadURL = window.URL.createObjectURL(data);
       var link = this.document.createElement('a');
       link.href = downloadURL;
       link.download = "E-Book Invierte desde Cero.pdf";
       link.click();
-    
+
     });
 
     this.load = false;
-    
+
   }
 
-  
+
 
 
 }

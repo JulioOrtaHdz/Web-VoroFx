@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 
 declare var $:any;
 
@@ -15,7 +15,7 @@ export class Institucional1Component implements OnInit, OnDestroy, AfterViewInit
   // @ViewChild("videoPlayer", { static: false}) videoplayer: ElementRef;
   isPlay: Boolean = false;
   myVideo: any;
-  
+
   languages: string[] = [
     'Español',
     'Ingles',
@@ -37,16 +37,16 @@ export class Institucional1Component implements OnInit, OnDestroy, AfterViewInit
     msj: null,
   };
 
- 
+
 
   public error: any = [];
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private Axin: AxinService,
+    private Axin: VorofxService,
     private router: Router
   ) {
-    
+
   }
 
   ngOnInit(): void {
@@ -60,10 +60,10 @@ export class Institucional1Component implements OnInit, OnDestroy, AfterViewInit
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
- 
+
 
 
   plays() {
@@ -112,7 +112,7 @@ export class Institucional1Component implements OnInit, OnDestroy, AfterViewInit
     console.log(data);
     this.show = false;
     this.msj = true;
-    this.reset(); 
+    this.reset();
   }
 
   handleError(error: any) {

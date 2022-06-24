@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Correo } from 'src/app/correo.model';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { EmailService } from 'src/app/services/email.service';
 
 
@@ -19,10 +19,10 @@ export class Home1Component implements OnInit, OnDestroy {
   videoBackground: any;
   coverVid: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private emailService: EmailService, private Subscription: AxinService, private router: Router) {
-   
+  constructor(@Inject(DOCUMENT) private document: Document, private emailService: EmailService, private Subscription: VorofxService, private router: Router) {
+
   }
- 
+
   public form = {
     email: ''
   };
@@ -35,18 +35,18 @@ export class Home1Component implements OnInit, OnDestroy {
     this.videoBackground = this.document.querySelector('#video_background');
     this.coverVid = this.document.querySelector('#covervid-video');
     var sBrowser, sUsrAg = navigator.userAgent;
-    
+
     if(sUsrAg.indexOf("Chrome") > -1) {
         sBrowser = "Google Chrome";
         this.myVideo.style.display = 'none';
         this.videoBackground.style.display = 'block';
-    } 
+    }
     else if(sUsrAg.indexOf("Mozilla") > -1) {
       sBrowser = "Mozilla";
       this.myVideo.style.display = 'none';
       this.videoBackground.style.display = 'block';
-    } 
-    else { 
+    }
+    else {
         this.myVideo.style.display = 'block';
         this.videoBackground.style.display = 'none';
       setInterval(async () => {
@@ -58,13 +58,13 @@ export class Home1Component implements OnInit, OnDestroy {
   }
 
   ngOnAfterView(){
-    
+
   }
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
   plays() {
@@ -99,7 +99,7 @@ export class Home1Component implements OnInit, OnDestroy {
      });
 
      console.log("Entro");
-    
+
 
     let correo1 = new Correo(this.form.email);
     this.emailService.agregarCorreo(correo1);

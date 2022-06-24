@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -22,14 +22,14 @@ export class CancelarSuscripcionComponent implements OnInit {
   ]);
 
   public load = false;
-  
+
   correo: string|null;
 
   form = new FormGroup({
     email: this.email
   })
 
-  constructor(private vorofxServices: AxinService, private router: Router, private activateRoute: ActivatedRoute) {
+  constructor(private vorofxServices: VorofxService, private router: Router, private activateRoute: ActivatedRoute) {
     this.correo = this.activateRoute.snapshot.paramMap.get('correo');
   }
 

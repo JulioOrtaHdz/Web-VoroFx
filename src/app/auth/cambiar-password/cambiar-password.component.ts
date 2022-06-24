@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Correo } from 'src/app/correo.model';
 import { AuthService } from 'src/app/services/auth.service';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { CanonicalService } from 'src/app/services/canonical.service';
 import { EmailService } from 'src/app/services/email.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -23,14 +23,14 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
   public hidePassword = true;
   public hideConfirm = true;
   public token = '';
-   
+
   correos: Correo[] = [];
 
 
   changePasswordForm: any;
 
 
-  private buildForm(): void { 
+  private buildForm(): void {
     this.changePasswordForm = this.formBuilder.group({
 
       password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$¡¿!%*.#/+-|°,><_)(?&])[0-9A-Za-z\d$@$¡¿!%*.#/+-|°,><_)(?&].{8,}')]],
@@ -48,7 +48,7 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    private Axin: AxinService,
+    private Axin: VorofxService,
     private router: Router,
     private title: Title,
     private activatedRoute: ActivatedRoute,
@@ -57,7 +57,7 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
       this.canonicalService.setCanonicalURL();
 
       this.title.setTitle('Cambiar contraseña | Axin Capital');
-  
+
       this.metaTagService.updateTag({ name: 'description',content: 'Regístrate y comienza a cumplir con todos tus objetivos a través de una inversión inteligente.' });
       // this.metaTagService.updateTag({ name: 'keywords', content: 'El mito del emprendedor de Michael Gerber, 5 errores de los emprendedores principiantes y cómo evitarlos'})
       this.metaTagService.updateTag({ property: 'og:title', content: 'Registro | Axin Capital' });
@@ -66,12 +66,12 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
       this.metaTagService.updateTag({ name:"twitter:title", content: 'Registro | Axin Capital' });
       this.metaTagService.updateTag({ name:"twitter:description", content: 'Regístrate y comienza a cumplir con todos tus objetivos a través de una inversión inteligente.' });
       this.metaTagService.updateTag({ name:"twitter:image", content: "https://axincapital.com/assets/img/screenshot.png" });
-      
+
       this.activatedRoute.params.subscribe(params => {
         /* console.log(params.id); */
         console.log(params.id);
         this.token = params.id;
-     
+
       });
     }
 
@@ -94,11 +94,11 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
     this.error = error.error.error;
     this.load = false;
   }
-  
+
 
 
   ngOnInit(): void {
-  
+
     this.hidePassword = true;
     this.hideConfirm = true;
     this.load = false;
@@ -108,8 +108,8 @@ export class CambiarPasswordComponent implements OnInit, OnDestroy {
 
   @HostListener('unloaded')
   ngOnDestroy(): void {
-   
-    
+
+
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -58,7 +58,7 @@ export class InvierteFormularioComponent implements OnInit {
     country: this.country
   });
 
-  constructor(@Inject(DOCUMENT) private document: Document, private vorofxServices: AxinService) {
+  constructor(@Inject(DOCUMENT) private document: Document, private vorofxServices: VorofxService) {
 
   }
 
@@ -78,7 +78,7 @@ export class InvierteFormularioComponent implements OnInit {
     )
 
     this.vorofxServices.vorofxSubscriptionCryptos(this.form.value).subscribe(
-      res => console.log(res), 
+      res => console.log(res),
       err => console.log(err)
     );
 

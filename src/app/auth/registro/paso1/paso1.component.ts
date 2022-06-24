@@ -2,7 +2,7 @@ import { Component, ComponentFactory, ComponentFactoryResolver, OnInit, Componen
 import { FormControl, FormGroup, Validators, ValidationErrors, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CanComponentDeactive } from 'src/app/guards/salir-registro.guard';
-import { AxinService } from 'src/app/services/vorofx.service';
+import { VorofxService } from 'src/app/services/vorofx.service';
 import { CryptoServiceService } from 'src/app/services/crypto-service.service';
 import { Modal } from 'src/app/utils/classes/modal.class';
 import { LangToggleService } from 'src/app/services/lang-toggle.service';
@@ -131,7 +131,7 @@ export class Paso1Component extends Modal implements OnInit, CanComponentDeactiv
   constructor(
     private router: Router,
     private crypto: CryptoServiceService,
-    private vorofx: AxinService,
+    private vorofx: VorofxService,
     public resolve: ComponentFactoryResolver,
     private activatedRoute: ActivatedRoute,
     private toggleLang: LangToggleService
@@ -281,7 +281,7 @@ export class Paso1Component extends Modal implements OnInit, CanComponentDeactiv
 
   openLangMenu(e: any, close = false, isEvent = false): void {
     e.classList.toggle("hidden");
-    
+
     if(close){
         e.classList.add("hidden");
     }
